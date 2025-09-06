@@ -1,0 +1,71 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-orange-50 to-red-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">实验列表</h1>
+      <p class="text-base sm:text-lg text-gray-600">动手实践，探索光学的奥秘</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 实验卡片网格 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 实验1：椭球面设计 -->
+      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+        <a href="rpw.html" class="block p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white text-xl">🔬</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">实验1</h3>
+              <p class="text-sm text-gray-600">椭球面设计</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm">探索椭球面的光学特性与设计方法</p>
+        </a>
+      </div>
+
+      <!-- 实验2：自由曲面单透镜 -->
+      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+        <a href="rsw.html" class="block p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white text-xl">🔭</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">实验2</h3>
+              <p class="text-sm text-gray-600">自由曲面单透镜</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm">设计和优化自由曲面单透镜系统</p>
+        </a>
+      </div>
+
+      <!-- 实验3：光学系统PSF -->
+      <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+        <a href="psfMTF.html" class="block p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4">
+              <span class="text-white text-xl">📊</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">实验3</h3>
+              <p class="text-sm text-gray-600">光学系统PSF分析</p>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm">分析光学系统的点扩散函数</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 返回按钮 -->
+    <div class="text-center mt-8">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

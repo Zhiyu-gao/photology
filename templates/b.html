@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光学成像系统设计</h1>
+      <p class="text-base sm:text-lg text-gray-600">深入理解光学系统的设计与优化</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 3.1 近轴光学 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">3.1</span>
+        </div>
+        近轴光学
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="b1.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.1.1 近轴光线追迹</h3>
+          <p class="text-sm text-gray-600 mt-2">理解光线在光学系统中的传播</p>
+        </a>
+        <a href="b2.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.1.2 基本光学系统参数</h3>
+          <p class="text-sm text-gray-600 mt-2">掌握光学系统的关键参数</p>
+        </a>
+        <a href="b3.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.1.3 光学系统的矩阵表示</h3>
+          <p class="text-sm text-gray-600 mt-2">使用矩阵描述光学系统</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3.2 实际光线追迹 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">3.2</span>
+        </div>
+        实际光线追迹
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="b4.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.2.1 实际光线追迹基础</h3>
+          <p class="text-sm text-gray-600 mt-2">了解实际光线追迹的原理</p>
+        </a>
+        <a href="b5.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.2.2 光线追迹方法</h3>
+          <p class="text-sm text-gray-600 mt-2">掌握不同的光线追迹技术</p>
+        </a>
+        <a href="b6.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.2.3 光线追迹应用</h3>
+          <p class="text-sm text-gray-600 mt-2">探索光线追迹的实际应用</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3.3 像差分析 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">3.3</span>
+        </div>
+        像差分析
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="b7.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.3.1 像差的基本概念</h3>
+          <p class="text-sm text-gray-600 mt-2">理解像差的本质和分类</p>
+        </a>
+        <a href="b8.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.3.2 三阶像差</h3>
+          <p class="text-sm text-gray-600 mt-2">深入研究三阶像差理论</p>
+        </a>
+        <a href="b9.html" class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">3.3.3 高阶像差</h3>
+          <p class="text-sm text-gray-600 mt-2">探索高阶像差的影响</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 返回按钮 -->
+    <div class="text-center">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

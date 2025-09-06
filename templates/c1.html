@@ -1,0 +1,216 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-4 sm:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">物理知识点 4.1.1 麦克斯韦（Maxwell）方程组</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-3 sm:p-4 sm:p-3 sm:p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+
+          <p class="text-base sm:text-lg mb-4">
+            按照光的波动理论，光是一种电磁波。根据频率不同，电磁波可分为无线电波、微波、红外光、可见光、紫外光、X射线、γ射线等。光学系统中的光波通常是指人眼能够感知的可见光波段以及临近的紫外和红外波段的电磁波。人们通过设计和制造相应的探测元器件可以对不同波段的光波进行直接或间接的测量。
+          </p>
+          
+          <p class="text-base sm:text-lg mb-4">
+            描述光波物理规律的最基本理论是麦克斯韦所创立的电磁场基本方程，也称为麦克斯韦方程组（Maxwell's Equations）。常用的微分形式的麦克斯韦方程组表示如下：
+          </p>
+
+          <!-- 麦克斯韦方程组 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 p-4 sm:p-6 rounded-lg mb-6">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 text-center">麦克斯韦方程组</h3>
+            <div class="space-y-3">
+              <div class="bg-white p-3 rounded border border-purple-200">
+                <div class="text-lg sm:text-xl font-mono text-gray-800 text-center">
+                  \[ \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \quad \text{(4.1a)} \]
+                </div>
+                <p class="text-sm text-gray-600 text-center mt-2">法拉第电磁感应定律</p>
+              </div>
+              
+              <div class="bg-white p-3 rounded border border-purple-200">
+                <div class="text-lg sm:text-xl font-mono text-gray-800 text-center">
+                  \[ \nabla \times \mathbf{H} = \mathbf{J} + \frac{\partial \mathbf{D}}{\partial t} \quad \text{(4.1b)} \]
+                </div>
+                <p class="text-sm text-gray-600 text-center mt-2">安培定律</p>
+              </div>
+              
+              <div class="bg-white p-3 rounded border border-purple-200">
+                <div class="text-lg sm:text-xl font-mono text-gray-800 text-center">
+                  \[ \nabla \cdot \mathbf{D} = \rho \quad \text{(4.1c)} \]
+                </div>
+                <p class="text-sm text-gray-600 text-center mt-2">高斯定律</p>
+              </div>
+              
+              <div class="bg-white p-3 rounded border border-purple-200">
+                <div class="text-lg sm:text-xl font-mono text-gray-800 text-center">
+                  \[ \nabla \cdot \mathbf{B} = 0 \quad \text{(4.1d)} \]
+                </div>
+                <p class="text-sm text-gray-600 text-center mt-2">高斯磁定律</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg mb-4">
+            其中，矢量 \(\mathbf{E}\) 表示电场强度，\(\mathbf{B}\) 表示磁感应强度，\(\mathbf{H}\) 表示磁场强度，\(\mathbf{D}\) 表示电位移矢量，\(\mathbf{J}\) 表示电流密度矢量，\(\rho\) 表示电荷密度，\(\nabla\) 是哈密顿算符，在笛卡尔坐标系中定义为：
+          </p>
+
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-3 sm:p-4 sm:p-6 rounded-lg text-center mb-4">
+            <div class="text-xl sm:text-2xl font-mono text-gray-800">
+              \[ \nabla = \frac{\partial}{\partial x} \mathbf{i} + \frac{\partial}{\partial y} \mathbf{j} + \frac{\partial}{\partial z} \mathbf{k} \]
+            </div>
+          </div>
+
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg mb-4">
+            <p class="text-gray-700">
+              在麦克斯韦方程组中：式(4.1a)是法拉第(Faraday)电磁感应定律，表示时变磁场产生电场；式(4.1b)是安培(Ampere)定律，表示电流和时变电场产生磁场；式(4.1c)是高斯(Gauss)定律，表示电荷产生电场；式(4.1d)是高斯磁定律，表示磁单极子不存在。
+            </p>
+          </div>
+
+          <p class="text-base sm:text-lg mb-4">
+            麦克斯韦方程组也可用积分形式表达，在此不再赘述，感兴趣的读者可参考相关文献。
+          </p>
+
+          <p class="text-base sm:text-lg mb-4">
+            当光波与物质发生作用时，物质的特性会对电磁波产生作用，这种变化规律由物质方程表示，即：
+          </p>
+
+          <!-- 物质方程 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded">
+              <div class="text-center font-mono text-gray-800">
+                \[ \varepsilon = \text{介电常数} \]
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded">
+              <div class="text-center font-mono text-gray-800">
+                \[ \varepsilon_0 = 8.854 \times 10^{-12} \, \text{F/m} \]
+              </div>
+              <p class="text-xs text-gray-600 text-center mt-1">真空中的介电常数</p>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded">
+              <div class="text-center font-mono text-gray-800">
+                \[ \varepsilon_r = \text{物质的相对介电常数} \]
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded">
+              <div class="text-center font-mono text-gray-800">
+                \[ \mu = \text{磁导率} \]
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded">
+              <div class="text-center font-mono text-gray-800">
+                \[ \mu_0 = 1.257 \times 10^{-6} \, \text{H/m} \]
+              </div>
+              <p class="text-xs text-gray-600 text-center mt-1">真空中的磁导率</p>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 p-3 rounded">
+              <div class="text-center font-mono text-gray-800">
+                \[ \mu_r = \text{物质的相对磁导率} \]
+              </div>
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg mb-4">
+            在线性、均匀、各向同性的介质中，介电常数和磁导率均为常数，而在各向异性的介质中，\(\varepsilon\) 与晶格的方向有关，称为介电系数，用张量表示，其会使 \(\mathbf{D}\) 与 \(\mathbf{E}\) 的方向不再相同。
+          </p>
+
+          <p class="text-base sm:text-lg mb-4">
+            电磁场的能量可用坡印廷(Poynting)矢量表示，其定义为：
+          </p>
+
+          <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-200 p-3 sm:p-4 sm:p-6 rounded-lg text-center mb-4">
+            <div class="text-xl sm:text-2xl font-mono text-gray-800">
+              \[ \mathbf{S} = \mathbf{E} \times \mathbf{H} \]
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg mb-4">
+            它的方向由右手螺旋法则确定。坡印廷矢量表示光能量的传播方向和大小，是能流密度的瞬时值，其时间平均即为通常所说的平均光强。
+          </p>
+
+          <p class="text-base sm:text-lg mb-4">
+            光在均匀、透明、各向同性的介质中传播时，其规律可由波动方程表示，即：
+          </p>
+
+          <!-- 波动方程 -->
+          <div class="bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200 p-4 sm:p-6 rounded-lg mb-6">
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 text-center">波动方程</h3>
+            <div class="space-y-3">
+              <div class="bg-white p-3 rounded border border-red-200">
+                <div class="text-lg sm:text-xl font-mono text-gray-800 text-center">
+                  \[ \nabla^2 \mathbf{E} - \varepsilon \mu \frac{\partial^2 \mathbf{E}}{\partial t^2} = 0 \quad \text{(4.3a)} \]
+                </div>
+              </div>
+              <div class="bg-white p-3 rounded border border-red-200">
+                <div class="text-lg sm:text-xl font-mono text-gray-800 text-center">
+                  \[ \nabla^2 \mathbf{H} - \varepsilon \mu \frac{\partial^2 \mathbf{H}}{\partial t^2} = 0 \quad \text{(4.3b)} \]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg mb-4">
+            其中电场和磁场都以波的形式传播，传播速度为：
+          </p>
+
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-3 sm:p-4 sm:p-6 rounded-lg text-center mb-4">
+            <div class="text-xl sm:text-2xl font-mono text-gray-800">
+              \[ v = \frac{1}{\sqrt{\varepsilon \mu}} \]
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg mb-4">
+            在真空中，光速为常数：
+          </p>
+
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 p-3 sm:p-4 sm:p-6 rounded-lg text-center mb-4">
+            <div class="text-xl sm:text-2xl font-mono text-gray-800">
+              \[ c = \frac{1}{\sqrt{\varepsilon_0 \mu_0}} = (299792.458 \pm 0.001) \, \text{km/s} \]
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg mb-4">
+            介质的折射率则定义为光在真空中的速度与在介质中的速度之比，即：
+          </p>
+
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 p-3 sm:p-4 sm:p-6 rounded-lg text-center mb-4">
+            <div class="text-xl sm:text-2xl font-mono text-gray-800">
+              \[ n = \frac{c}{v} = \sqrt{\varepsilon_r \mu_r} \]
+            </div>
+          </div>
+
+          <div class="bg-purple-50 border-l-4 border-purple-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              光波的传输可由麦克斯韦方程组完全表示，基于麦克斯韦方程组的数值运算方法可实现对光波的全波仿真，为描述光波与物质作用提供了有效的工具。目前，全波仿真的商业软件（如Lumerical、Comsol、CST）以及开源代码库（如Meep）等工具都已日臻成熟和完善，因此本章将重点介绍在近似条件下的麦克斯韦方程组的简化解法及其Python实现，对全波仿真感兴趣的读者可参见相应的软件或代码库。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:p-4">
+      <button onclick="window.location.href='c.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c2.html'" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光学系统评价</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光学系统的性能评价方法</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">评价指标</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光学系统的评价指标包括：MTF、波像差、
+            点列图、能量集中度等多个方面。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              不同的评价指标反映系统性能的不同方面。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">MTF分析</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            调制传递函数（MTF）是评价光学系统成像质量的重要指标。
+            它描述了系统对不同空间频率的传递能力。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              MTF曲线直观反映了系统的分辨能力。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">波像差分析</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            波像差分析可以评估系统的像差水平。
+            通过波前误差来表征系统的成像质量。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              波像差分析有助于优化系统设计。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">综合评价</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            综合评价需要考虑多个指标，包括光学性能、
+            机械性能、环境适应性等多个方面。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              全面的评价体系确保系统满足应用需求。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='b6.html'" class="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上级
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='b8.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

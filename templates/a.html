@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">几何光学基础</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光的基本性质和传播规律</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 2.1 光的历史与发展 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">2.1</span>
+        </div>
+        光的历史与发展
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="a1.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.1.1 光的历史</h3>
+          <p class="text-sm text-gray-600 mt-2">探索光学的历史发展</p>
+        </a>
+        <a href="a2.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.1.2 光的本质</h3>
+          <p class="text-sm text-gray-600 mt-2">理解光的基本特性</p>
+        </a>
+        <a href="a3.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.1.3 光的应用</h3>
+          <p class="text-sm text-gray-600 mt-2">了解光在现代科技中的应用</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2.2 几何光学基础 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">2.2</span>
+        </div>
+        几何光学基础
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="a4.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.2.1 光的直线传播</h3>
+          <p class="text-sm text-gray-600 mt-2">研究光的传播特性</p>
+        </a>
+        <a href="a5.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.2.2 光的反射</h3>
+          <p class="text-sm text-gray-600 mt-2">探索光的反射规律</p>
+        </a>
+        <a href="a6.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.2.3 光的折射</h3>
+          <p class="text-sm text-gray-600 mt-2">理解光的折射现象</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2.3 成像理论 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">2.3</span>
+        </div>
+        成像理论
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="a7.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.3.1 成像基本原理</h3>
+          <p class="text-sm text-gray-600 mt-2">掌握光学成像的基础</p>
+        </a>
+        <a href="a8.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.3.2 理想成像条件</h3>
+          <p class="text-sm text-gray-600 mt-2">研究完美成像的要求</p>
+        </a>
+        <a href="a9.html" class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">2.3.3 实际成像分析</h3>
+          <p class="text-sm text-gray-600 mt-2">分析实际成像系统</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 返回按钮 -->
+    <div class="text-center">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

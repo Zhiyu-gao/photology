@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光的传播定律</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光的基本传播规律</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">直线传播定律</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            在均匀介质中，光沿直线传播。这一定律是几何光学的基础，
+            解释了为什么物体会产生影子，以及针孔成像等现象。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              光的直线传播定律在光学设计中有重要应用，如光学仪器的光路设计。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">反射定律</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            当光线射到反射面时，入射光线、反射光线和法线在同一平面内，
+            入射角等于反射角。这一定律是镜面反射的基础。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              反射定律在镜子、反光镜等光学元件的设计中起着关键作用。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">折射定律</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            当光从一种介质斜射入另一种介质时，入射光线、折射光线和法线在同一平面内，
+            且入射角的正弦与折射角的正弦之比等于两种介质折射率之比。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              折射定律（斯涅尔定律）是透镜、棱镜等光学器件设计的理论基础。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">费马原理</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光在传播过程中总是选择光程最短的路径。这一原理可以统一解释
+            光的直线传播、反射和折射等现象。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              费马原理是几何光学的基本原理之一，为光学系统设计提供了理论指导。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='a3.html'" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上一页
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='a5.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

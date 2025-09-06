@@ -1,0 +1,288 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.5 瑞丽索末衍射理论</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔬</span>
+            </div>
+            瑞丽索末衍射理论
+          </h3>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              瑞丽索末衍射理论（Rayleigh-Sommerfeld diffraction theory）是描述光波衍射的经典理论之一。它提供了一种处理复杂衍射问题的方法，尤其适用于研究光波在孔径、边缘等障碍物周围的传播。瑞丽索末衍射理论是基于赫兹矢量势场方程和波动方程推导出来的，通常用于描述光的传播和衍射，尤其是在相干光源的情况下。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📐</span>
+            </div>
+            1. 瑞丽索末衍射方程
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            瑞丽索末衍射理论通过引入光场的积分形式来解决衍射问题。在该理论中，光波的传播被看作是通过积分获得的。假设有一个波源 \( S \)，它发出的光波通过一个孔径或障碍物进入远场区域。瑞丽索末衍射公式可以表示为：
+          </p>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[
+              U(P) = \frac{1}{i\lambda} \int\limits_{S} \frac{e^{ikr}}{r} \left[ \hat{n} \cdot \nabla' U(S) \right] dS
+              \]
+            </div>
+          </div>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-3 rounded-lg border border-green-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( U(P) \)</strong>：点 \( P \) 处的衍射波场
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( U(S) \)</strong>：波源 \( S \) 处的波场
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( \hat{n} \)</strong>：从源点到观察点的单位向量
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-3 rounded-lg border border-pink-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( r \)</strong>：从源点到观察点的距离
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-3 rounded-lg border border-indigo-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( \lambda \)</strong>：光的波长
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-3 rounded-lg border border-cyan-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( k = \frac{2\pi}{\lambda} \)</strong>：波数
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              积分是沿着源面 \( S \) 进行的。该方程描述了从源面到观测点 \( P \) 之间的光波传播，并考虑了光在传播过程中由于障碍物或孔径所发生的衍射效应。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌐</span>
+            </div>
+            2. 瑞丽索末衍射的近场与远场
+          </h3>
+          
+          <p class="text-base sm:text-lg">在瑞丽索末衍射理论中，衍射场可以分为近场和远场两种情况：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">📏</span>
+                近场
+              </h4>
+              <p class="text-sm text-gray-700">
+                近场区域指的是离波源较近的区域。在此区域内，光波的传播受到源的直接影响，波前不再是简单的平面波或球面波，而是受到复杂的衍射效应的影响。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">🔭</span>
+                远场
+              </h4>
+              <p class="text-sm text-gray-700">
+                远场区域是指离波源足够远的地方。在此区域内，波前趋近于平面波，可以使用傅里叶变换简化计算。在远场中，瑞丽索末衍射理论通常转化为傅里叶光学的计算方法。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">💡</span>
+            </div>
+            3. 瑞丽索末衍射的物理意义
+          </h3>
+          
+          <div class="bg-gradient-to-r from-orange-50 to-red-50 p-4 rounded-lg border border-orange-200">
+            <p class="text-base sm:text-lg">
+              瑞丽索末衍射理论从波动光学的角度出发，描述了光波在传播过程中如何与障碍物相互作用，导致衍射现象的发生。该理论提供了对衍射图样、光波传播路径和波前形状的详细计算方法，适用于处理复杂的衍射问题。例如，光通过小孔、狭缝或光学元件时，都会产生衍射效应，影响光的传播方向和强度。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">⚙️</span>
+            </div>
+            4. 瑞丽索末衍射理论的应用
+          </h3>
+          
+          <p class="text-base sm:text-lg">瑞丽索末衍射理论在许多领域都有重要应用，尤其在光学成像、激光系统、光学通信等领域：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">🔬</span>
+                光学成像
+              </h4>
+              <p class="text-sm text-gray-700">
+                瑞丽索末衍射理论用于分析显微镜、望远镜等成像系统中的衍射效应，帮助改善成像质量。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🔧</span>
+                光学元件设计
+              </h4>
+              <p class="text-sm text-gray-700">
+                在设计光学透镜、光纤等元件时，瑞丽索末衍射理论帮助分析衍射效应对系统性能的影响。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">💎</span>
+                激光技术
+              </h4>
+              <p class="text-sm text-gray-700">
+                瑞丽索末衍射理论在激光束传播和激光束整形等方面有广泛应用，帮助设计高精度的激光系统。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-lime-50 to-lime-100 p-4 rounded-lg border border-lime-200">
+              <h4 class="font-semibold text-lime-800 mb-2 flex items-center">
+                <span class="mr-2">📡</span>
+                光学通信
+              </h4>
+              <p class="text-sm text-gray-700">
+                瑞丽索末衍射理论用于分析光纤通信中的衍射现象，优化信号传输效果。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🧮</span>
+            </div>
+            5. 瑞丽索末衍射的计算方法
+          </h3>
+          
+          <p class="text-base sm:text-lg">瑞丽索末衍射理论的计算通常依赖数值积分方法，因为一般的解析解很难得到。常见的数值方法包括：</p>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">📊</span>
+                积分法
+              </h4>
+              <p class="text-sm text-gray-700">
+                直接使用瑞丽索末衍射方程进行数值积分，得到衍射场的空间分布。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">🔄</span>
+                傅里叶变换法
+              </h4>
+              <p class="text-sm text-gray-700">
+                在远场区域，可以使用傅里叶光学的方法进行简化计算，将衍射问题转化为频域的问题。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                <span class="mr-2">🔲</span>
+                有限元法
+              </h4>
+              <p class="text-sm text-gray-700">
+                通过有限元法（FEM）对光波传播进行数值模拟，适用于复杂的几何结构和材料特性。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">⚠️</span>
+            </div>
+            6. 瑞丽索末衍射的限制
+          </h3>
+          
+          <p class="text-base sm:text-lg">尽管瑞丽索末衍射理论在很多应用中非常有效，但它也有一些局限性：</p>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg border border-red-200">
+              <h4 class="font-semibold text-red-800 mb-2 flex items-center">
+                <span class="mr-2">📋</span>
+                假设条件
+              </h4>
+              <p class="text-sm text-gray-700">
+                瑞丽索末衍射理论假设光波是线性、均匀传播的，但在某些复杂介质中，光的传播可能受到非线性或不均匀介质的影响。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-lg border border-orange-200">
+              <h4 class="font-semibold text-orange-800 mb-2 flex items-center">
+                <span class="mr-2">💻</span>
+                计算复杂性
+              </h4>
+              <p class="text-sm text-gray-700">
+                当衍射源和观测点之间的距离非常大时，数值计算可能变得非常复杂，需要大量的计算资源。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              瑞丽索末衍射理论是描述光波衍射现象的经典理论之一，广泛应用于光学设计、激光技术、光纤通信等领域。它为解决衍射问题提供了一个数学框架，并且在实际应用中，通过数值计算方法，可以有效地分析和预测光波在不同条件下的衍射效果。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c8.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c10.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

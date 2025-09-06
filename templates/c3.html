@@ -1,0 +1,211 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.2 光的干涉</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌊</span>
+            </div>
+            光的干涉
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            光的干涉现象是两束或多束相干光波相遇时，互相影响产生亮暗相间的条纹图样。光的干涉本质上是波的叠加现象。干涉现象的研究为光波动性提供了强有力的证据。
+          </p>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📋</span>
+            </div>
+            1. 干涉的基本条件
+          </h3>
+          
+          <p class="text-base sm:text-lg">光的干涉需要满足以下两个基本条件：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h5 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">⚡</span>
+                相干性
+              </h5>
+              <p class="text-sm text-gray-700">
+                干涉的两束光必须是相干光源，即光波的相位差在时间上保持不变。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h5 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">🎵</span>
+                同频性
+              </h5>
+              <p class="text-sm text-gray-700">
+                两束光的频率必须相同，否则无法产生稳定的干涉条纹。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📊</span>
+            </div>
+            2. 干涉条纹的形成
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            干涉条纹的形成是由于两束相干光波相遇时，它们的振幅相加。根据波动叠加原理，当两束光波相位差为整数倍的 \(2\pi\) 时，两波同相干涉，形成亮条纹；当相位差为半整数倍的 \( \pi \) 时，两波反相干涉，形成暗条纹。
+          </p>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🧮</span>
+            </div>
+            3. 干涉条纹的数学描述
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            设两束相干光波的复振幅分别为 \( U_1 = A_1 e^{i(\mathbf{k} \cdot \mathbf{r} - \omega t)} \) 和 \( U_2 = A_2 e^{i(\mathbf{k} \cdot \mathbf{r} - \omega t + \delta)} \)，其中，\( A_1 \) 和 \( A_2 \) 分别是两束光波的振幅，\( \delta \) 为它们之间的相位差，\( \mathbf{k} \) 是波矢，\( \omega \) 是角频率，\( \mathbf{r} \) 是位置矢量，\( t \) 是时间。
+          </p>
+          
+          <p class="text-base sm:text-lg">两束光波的总波函数为：</p>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ U_{\text{total}} = U_1 + U_2 = A_1 e^{i(\mathbf{k} \cdot \mathbf{r} - \omega t)} + A_2 e^{i(\mathbf{k} \cdot \mathbf{r} - \omega t + \delta)} \]
+            </div>
+          </div>
+          
+          <p class="text-base sm:text-lg">根据复数的加法法则，干涉的强度 \( I \) 与波函数的模平方成正比：</p>
+          
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ I = |U_{\text{total}}|^2 = |A_1 e^{i(\mathbf{k} \cdot \mathbf{r} - \omega t)} + A_2 e^{i(\mathbf{k} \cdot \mathbf{r} - \omega t + \delta)}|^2 \]
+            </div>
+          </div>
+          
+          <p class="text-base sm:text-lg">展开计算可得：</p>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ I = A_1^2 + A_2^2 + 2A_1 A_2 \cos(\delta) \]
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              当相位差 \( \delta = 2n\pi \) （其中 \(n\) 为整数）时，干涉强度为最大值，形成亮条纹；当 \( \delta = (2n + 1)\pi \) 时，干涉强度为最小值，形成暗条纹。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔬</span>
+            </div>
+            4. 干涉的应用
+          </h3>
+          
+          <p class="text-base sm:text-lg">光的干涉现象在许多领域有着广泛的应用，包括：</p>
+          
+          <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h5 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">🌈</span>
+                薄膜干涉
+              </h5>
+              <p class="text-sm text-gray-700">
+                如肥皂泡、水面等薄膜的颜色变化就是由于光在薄膜中反射和干涉的结果。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h5 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">📏</span>
+                迈克耳孙干涉仪
+              </h5>
+              <p class="text-sm text-gray-700">
+                用于精密测量，特别是在激光干涉计量中。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h5 class="font-semibold text-purple-800 mb-2 flex items-center">
+                <span class="mr-2">🔌</span>
+                光纤干涉仪
+              </h5>
+              <p class="text-sm text-gray-700">
+                用于传感、测量和信号处理。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🧪</span>
+            </div>
+            5. 光的干涉实验
+          </h3>
+          
+          <p class="text-base sm:text-lg">经典的光干涉实验包括：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg border border-indigo-200">
+              <h5 class="font-semibold text-indigo-800 mb-2 flex items-center">
+                <span class="mr-2">📐</span>
+                杨氏双缝实验
+              </h5>
+              <p class="text-sm text-gray-700">
+                通过两个狭缝产生的相干光源产生干涉条纹，证明了光的波动性。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h5 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">📏</span>
+                迈克耳孙干涉仪
+              </h5>
+              <p class="text-sm text-gray-700">
+                用于精密测量波长、长度等物理量。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              通过这些实验，光的波动性质得到了充分验证。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c2.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c4.html'" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

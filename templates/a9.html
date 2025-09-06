@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光的量子性质</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光的量子特性及其现代应用</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">光子概念</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光子是光的基本粒子，具有确定的能量E=hν，其中h是普朗克常数，
+            ν是光的频率。光子没有静止质量，总是以光速运动。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              光子的概念是由爱因斯坦在解释光电效应时提出的。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">光电效应</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光电效应是光照射金属表面时，使金属发射电子的现象。
+            这一现象只能用光的粒子性来解释，是量子力学的重要基础。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              光电效应在太阳能电池、光电探测器等设备中有重要应用。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">康普顿效应</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            康普顿效应是光子与自由电子碰撞时的散射现象，
+            散射光的波长增加，这进一步证实了光的粒子性。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              康普顿效应在X射线散射和医学成像中有重要应用。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">现代应用</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光的量子性质在量子通信、量子计算、量子密码等领域有重要应用。
+            单光子源和纠缠光子对是量子信息技术的关键。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              量子光学的发展为未来的量子技术革命奠定了基础。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='a8.html'" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上一页
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='b.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一章节
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

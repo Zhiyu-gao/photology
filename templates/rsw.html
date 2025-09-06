@@ -1,0 +1,159 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 页面标题 -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">球面波的折射</h1>
+      <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">探索球面波在透镜系统中的传播特性</p>
+      <div class="w-32 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-6"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+      <!-- 问题描述 -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">问题描述</h2>
+        <div class="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-500">
+          <p class="text-gray-700 leading-relaxed">
+            理想透镜能把物点发出的光汇聚成理想球面波，出射位置坐标为P(0,0)，
+            经过透镜之后汇聚于点P'(100,0)，透镜的厚度为5mm。画出五条从P发出的光线
+            （角度均匀采样为-10°、-5°、0°、5°、10°），经过透镜后汇聚于点P'(100,0)。
+            <br><br>
+            <span class="text-sm text-gray-500">注：此处不要求透镜的几何外形，默认透镜的前后表面均为平面</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- 输入表单 -->
+      <form action="" method="post" enctype="multipart/form-data" class="space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">参数输入</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- 入射位置 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">入射位置 P(x,0)</label>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <input type="text" name="th4" value="0" 
+                class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 pr-12 sm:text-sm border-gray-300 rounded-md"
+                placeholder="请输入入射位置">
+              <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <span class="text-gray-500 sm:text-sm">mm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 出射位置 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">出射位置 P'(x,0)</label>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <input type="text" name="th3" value="100" 
+                class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 pr-12 sm:text-sm border-gray-300 rounded-md"
+                placeholder="请输入出射位置">
+              <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <span class="text-gray-500 sm:text-sm">mm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 透镜厚度 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">透镜厚度</label>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <input type="text" name="lensR" value="5" 
+                class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 pr-12 sm:text-sm border-gray-300 rounded-md"
+                placeholder="请输入透镜厚度">
+              <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <span class="text-gray-500 sm:text-sm">mm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 前顶点位置 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">前顶点位置</label>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <input type="text" name="th1" value="45" 
+                class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 pr-12 sm:text-sm border-gray-300 rounded-md"
+                placeholder="请输入前顶点位置">
+              <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <span class="text-gray-500 sm:text-sm">mm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 后顶点位置 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">后顶点位置</label>
+            <div class="mt-1 relative rounded-md shadow-sm">
+              <input type="text" name="th2" value="50" 
+                class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 pr-12 sm:text-sm border-gray-300 rounded-md"
+                placeholder="请输入后顶点位置">
+              <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <span class="text-gray-500 sm:text-sm">mm</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 光线角度 -->
+          <div class="space-y-2 md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700">光线角度</label>
+            <input type="text" name="A" value="[-10,-5,0,5,10]" 
+              class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入五条光线角度">
+            <p class="mt-1 text-sm text-gray-500">请输入5个角度值，用逗号分隔，单位：度</p>
+          </div>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="mt-8 flex justify-center">
+              {% csrf_token %}
+          <button type="submit" 
+            class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold 
+            hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            生成光线图
+          </button>
+        </div>
+      </form>
+
+      <!-- 结果显示 -->
+      {% if img_b64 %}
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">计算结果</h2>
+        <div class="bg-white rounded-xl border-2 border-gray-200 p-4">
+          <img src="data:image/png;base64,{{img_b64}}" alt="光线图" class="mx-auto"/>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if error %}
+      <div class="mt-6">
+        <div class="bg-red-50 border-l-4 border-red-500 p-4">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-red-700">{{error}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-6">
+      <button onclick="window.location.href='photology.html'" 
+        class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold 
+        hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

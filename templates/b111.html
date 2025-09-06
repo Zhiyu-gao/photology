@@ -1,0 +1,101 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-4 sm:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光学系统PSF和MTF的计算</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-teal-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-3 sm:p-4 sm:p-3 sm:p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+<!-- 页面标题 -->
+<h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">光学系统PSF和MTF的计算</h4>
+<!-- 内容卡片 -->
+<!-- 页面标题 -->
+<h4 >光学系统PSF和MTF的计算</h4>
+<!-- 内容卡片 -->
+<!-- <form action = "" method="post" enctype="multipart/form-data"></form> -->
+<h4 >光学系统PSF和MTF的计算</h4>
+<h4 >物理知识点 </h4>
+<h1 style="color: black">
+三片式光学系统的像差特性
+下面举例说明三片式光学系统的像差特性。
+已知一个三片式光学系统，其示意图如图 3.39 所示，用 Python 计算并绘制该光学系
+统的横向像差点列图、径向像差曲线图和畸变曲线。系统入瞳直径为 37 mm，光学系统工
+作在单波长 550 nm，光学系统其他参数如表 3.6 所示。
+（1）绘制 0°、8°、14°、20°四个视场的点列图。
+（2）绘制[0°，20°]以内分别对人瞳 p_x 和 p_y 方向的径向像差曲线。
+（3）绘制[0°，20°]以内所有视场的畸变，每隔 1°采样，并以视场角为横坐标、畸变误差
+为纵坐标绘制畸变曲线图。
+图 3.39 三片式光学系统示意图
+表 3.6 光学系统的参数
+| 光学系统参数 | 第1面 | 第2面 | 第3面 | 第4面 | 第5面 | 第6面 |
+|--------------|-------|-------|-------|-------|-------|-------|
+| 透镜的曲率半径R | +40.94 | 0.00  | -55.65 | +39.75 | +107.56 | -43.33 |
+| 镜面距离t | 8.74  | 11.05 | 2.78  | 7.63  | 9.54  |       |
+| 介质折射率n | 1.62  | 1.00  | 1.65  | 1.00  | 1.62  |       |
+具体思路如下：
+（1）由于一条光线是来自某个物点并经过入瞳面上某一点的射线，因此光学系统的光线
+计算首先要进行合理的光线采样，以表征不同物点。不同物点发出的光线需要均匀分布
+在入瞳面上，也称为入瞳采样。对于所有这些视场和入瞳采样后的光线，根据实际光线追
+迹可得到它们在像面上的实际位置。根据这些位置点在入瞳面上的坐标把它们进行排列就
+可以得到横向像差点列图。具体计算过程如下：
+① 使用近轴光线追迹公式计算轴上一束平行光与光轴的交点，以确定光学系统的光束
+最佳成像面。对其他视场的光线进行采样。将物点看作无穷远，光线是由入瞳面上的圆形
+光源发出的，可以在该圆上对点光源进行采样以达到对光线采样的目的，笛卡尔坐标系采
+样和极坐标系采样如图 3.40 所示。光线在入瞳平面上可以有不同的均匀分布。
+（2）径向像差是不同视场发出的光束的最佳像面与光学系统实际像面之间的轴向位置
+偏差。为了计算某一光束的最佳像面，我们在距离光学系统焦面-2~2 mm的轴向范围中
+计算每个位置的点列图，并将光斑最小的位置确定为光学系统的最佳成像面。
+在每个视场角采样两组光线，采样半径 R=17，其中一组光线采样时，x 恒为 0，y 从
+-R~R 遍历；另一组光线采样时，y 为 -L×tan(θ)，x 从 -R~R 遍历，两组光线的采样
+示意图如图 3.42 所示。分别对这两组光线计算径向像差，并绘制径向像差曲线，绘制结果
+如图 3.43 所示。
+（3）在光学系统理想成像面上，对主光线采用近轴光线追迹和实际光线追迹公式分别计
+算出 y'2 和 y'，计算示意图如图 3.44 所示，其中入瞳直径为 37 mm。由公式 q=(y'2 -y')/
+y' × 100% 计算得到畸变量，畸变曲线结果示意图如图 3.45 所示。</h1>
+<form action = "" method="post" enctype="multipart/form-data">
+<h4 >在这里输入你的数据</h4>
+<input type="text"  value="0 请输入入瞳孔径大小" name="u0">
+<input type="text"  value="0 请输入最大视场角" name="v0">
+<input type="text"  value="0 请输入入瞳位置" name="wd">    
+<h4 >生成的光线图</h4>
+<img src="data:image/png;base64,{{img_b64}}" />
+<h4 >生成的光线图</h4>
+<img src="data:image/png;base64,{{img_b64_1}}" />
+<h4 >生成的光线图</h4>
+<img src="data:image/png;base64,{{img_b64_2}}" />
+<h4 >请输入数据并点击提交按钮以生成图像</h4>
+<h4 >{{error}}</h4>
+</form>
+<!-- 导航按钮 -->
+<button onclick="window.location.href='a.html'" >
+<span >←</span>
+返回上一页
+</button>
+<button onclick="window.location.href='photology.html'" >
+<span >🏠</span>
+返回主页
+</button>
+<button onclick="window.location.href='a2.html'" >
+下一页
+<span >→</span>
+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:p-4">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center" text-sm sm:text-base>
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

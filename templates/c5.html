@@ -1,0 +1,266 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.3.2 斯托克斯矢量和穆勒矩阵</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔬</span>
+            </div>
+            斯托克斯矢量和穆勒矩阵
+          </h3>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              斯托克斯矢量和穆勒矩阵是描述光偏振状态的重要工具，广泛应用于光学系统中，尤其是在光的偏振分析和光学仪器设计中。斯托克斯矢量提供了一个简洁的方式来表示光的偏振状态，而穆勒矩阵则用于描述光学元件对光偏振的影响。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📐</span>
+            </div>
+            1. 斯托克斯矢量
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            斯托克斯矢量是用来描述光的偏振状态的四维矢量，它不依赖于光的相位，因此比琼斯矢量具有更广泛的适用性。斯托克斯矢量包含了光的偏振信息，包括光的强度、偏振度以及偏振的方向。
+          </p>
+          
+          <p class="text-base sm:text-lg">斯托克斯矢量由四个分量组成，通常记作 \(S_0, S_1, S_2, S_3\)：</p>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[
+              \mathbf{S} = \begin{pmatrix} S_0 \\ S_1 \\ S_2 \\ S_3 \end{pmatrix}
+              \]
+            </div>
+          </div>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-3 rounded-lg border border-green-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( S_0 \)</strong>：表示光的总强度，即光波的总能量。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( S_1 \)</strong>：表示偏振光的水平偏振分量与垂直偏振分量之间的差异。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-3 rounded-lg border border-purple-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( S_2 \)</strong>：表示偏振光的 +45° 偏振分量与 -45° 偏振分量之间的差异。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-3 rounded-lg border border-orange-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( S_3 \)</strong>：表示偏振光的右旋圆偏振分量与左旋圆偏振分量之间的差异。
+              </p>
+            </div>
+          </div>
+          
+          <p class="text-base sm:text-lg">斯托克斯参数的具体计算方法如下：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 p-4 sm:p-6 rounded-lg text-center">
+              <div class="text-lg sm:text-xl font-mono text-gray-800">
+                \[ S_0 = I_{\text{total}} = I_{\text{H}} + I_{\text{V}} \]
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+              <div class="text-lg sm:text-xl font-mono text-gray-800">
+                \[ S_1 = I_{\text{H}} - I_{\text{V}} \]
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 p-4 sm:p-6 rounded-lg text-center">
+              <div class="text-lg sm:text-xl font-mono text-gray-800">
+                \[ S_2 = I_{45^\circ} - I_{-45^\circ} \]
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 p-4 sm:p-6 rounded-lg text-center">
+              <div class="text-lg sm:text-xl font-mono text-gray-800">
+                \[ S_3 = I_{\text{R}} - I_{\text{L}} \]
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              其中，\( I_{\text{H}} \) 和 \( I_{\text{V}} \) 分别为水平和垂直偏振光的强度，\( I_{45^\circ} \) 和 \( I_{-45^\circ} \) 分别为 +45° 和 -45° 偏振光的强度，\( I_{\text{R}} \) 和 \( I_{\text{L}} \) 分别为右旋圆偏振光和左旋圆偏振光的强度。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">⚙️</span>
+            </div>
+            2. 穆勒矩阵
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            穆勒矩阵是一种用于描述光学元件或系统对偏振光影响的 \(4 \times 4\) 矩阵。与琼斯矩阵不同，穆勒矩阵能够处理非相干光和混合偏振光，因此在许多实际光学系统中得到广泛应用。
+          </p>
+          
+          <p class="text-base sm:text-lg">
+            假设光波的斯托克斯矢量为 \( \mathbf{S}_{in} \)，经过光学元件后的斯托克斯矢量为 \( \mathbf{S}_{out} \)，则通过穆勒矩阵 \( \mathbf{M} \) 的变换可以得到：
+          </p>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[
+              \mathbf{S}_{out} = \mathbf{M} \cdot \mathbf{S}_{in}
+              \]
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              穆勒矩阵描述了光学元件或系统如何改变入射光的偏振状态。它的每个元素 \( M_{ij} \) 代表了光学元件在不同斯托克斯分量之间的转化。
+            </p>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-3 flex items-center">
+                <span class="mr-2">2.1</span>
+                偏振片的穆勒矩阵
+              </h4>
+              <p class="text-sm text-gray-700 mb-3">
+                对于偏振片，穆勒矩阵可表示为：
+              </p>
+              <div class="bg-white p-3 rounded border border-blue-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[
+                  \mathbf{M}_{\text{pol}} = \frac{1}{2} \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}
+                  \]
+                </div>
+              </div>
+              <p class="text-sm text-gray-700 mt-3">
+                该矩阵将入射光的斯托克斯矢量转换为透过偏振片后的光的斯托克斯矢量。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-3 flex items-center">
+                <span class="mr-2">2.2</span>
+                四分之一波片的穆勒矩阵
+              </h4>
+              <p class="text-sm text-gray-700 mb-3">
+                四分之一波片的穆勒矩阵为：
+              </p>
+              <div class="bg-white p-3 rounded border border-green-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[
+                  \mathbf{M}_{\lambda/4} = \frac{1}{2} \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & -1 \\ 0 & 0 & -1 & 0 \end{pmatrix}
+                  \]
+                </div>
+              </div>
+              <p class="text-sm text-gray-700 mt-3">
+                该矩阵表示四分之一波片对光的偏振状态的作用，主要用于将线偏振光转换为圆偏振光或反之。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h4 class="font-semibold text-purple-800 mb-3 flex items-center">
+                <span class="mr-2">2.3</span>
+                半波片的穆勒矩阵
+              </h4>
+              <p class="text-sm text-gray-700 mb-3">
+                半波片的穆勒矩阵为：
+              </p>
+              <div class="bg-white p-3 rounded border border-purple-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[
+                  \mathbf{M}_{\lambda/2} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & \cos 2\theta & \sin 2\theta & 0 \\ 0 & -\sin 2\theta & \cos 2\theta & 0 \\ 0 & 0 & 0 & -1 \end{pmatrix}
+                  \]
+                </div>
+              </div>
+              <p class="text-sm text-gray-700 mt-3">
+                半波片的作用是旋转偏振光的方向，它使偏振光的偏振方向发生 \( 2\theta \) 的旋转。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">💡</span>
+            </div>
+            3. 斯托克斯矢量与穆勒矩阵的应用
+          </h3>
+          
+          <div class="bg-gradient-to-r from-orange-50 to-red-50 p-4 rounded-lg border border-orange-200">
+            <p class="text-base sm:text-lg">
+              斯托克斯矢量和穆勒矩阵在许多光学应用中都有重要作用，尤其是在描述和设计光学系统的偏振行为时。
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-3 flex items-center">
+                <span class="mr-2">3.1</span>
+                偏振光分析
+              </h4>
+              <p class="text-sm text-gray-700">
+                通过测量光的斯托克斯矢量，可以获得光的偏振度、偏振方向以及偏振类型（如线偏振、圆偏振等）。穆勒矩阵则用于描述光通过各种光学元件（如偏振片、波片等）后的偏振变化。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-3 flex items-center">
+                <span class="mr-2">3.2</span>
+                偏振控制
+              </h4>
+              <p class="text-sm text-gray-700">
+                穆勒矩阵帮助我们理解如何通过控制光学元件（如波片、偏振片）来调节光的偏振状态。例如，可以通过调整波片的角度来控制偏振光的偏振方向。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-3 flex items-center">
+                <span class="mr-2">3.3</span>
+                光学仪器设计
+              </h4>
+              <p class="text-sm text-gray-700">
+                斯托克斯矢量和穆勒矩阵广泛应用于光学仪器的设计，如偏振光谱仪、激光偏振器、偏振干涉仪等。通过这些工具，设计者可以精确控制光的偏振特性，从而实现对光信号的调制和探测。
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c4.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c6.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

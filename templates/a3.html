@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光的应用</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光在现代科技中的广泛应用</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">通信技术</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光纤通信是现代通信技术的基石，利用光在光纤中的传输特性，
+            可以实现高速、大容量的数据传输。光纤通信具有传输损耗小、抗干扰能力强等优点。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              现代互联网的高速发展离不开光纤通信技术的支持。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">医疗应用</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            激光手术、光动力疗法等医疗技术广泛应用于临床治疗。
+            光学成像技术如OCT（光学相干断层扫描）可以提供高分辨率的生物组织图像。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              光学技术在医疗诊断和治疗中发挥着越来越重要的作用。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">工业制造</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            激光切割、激光焊接、激光打标等技术在工业制造中广泛应用。
+            光学检测和测量技术可以实现高精度的质量控制和尺寸测量。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              激光加工技术具有精度高、效率高、无接触等优点。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">科学研究</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光谱分析、激光冷却、光学陷阱等技术在物理、化学、生物等领域发挥重要作用。
+            天文观测中的光学望远镜帮助人类探索宇宙奥秘。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              光学技术是现代科学研究的重要工具和手段。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='a2.html'" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上一页
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='a4.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

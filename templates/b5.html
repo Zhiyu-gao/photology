@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光学系统像差</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光学系统中的各种像差及其校正方法</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">像差概述</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            像差是实际光学系统中不可避免的成像缺陷。
+            主要包括球差、彗差、像散、场曲和畸变等。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              了解各种像差的特点是优化光学系统的基础。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">常见像差</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            球差：轴上点发出的不同孔径光线焦点位置不同。
+            色差：不同波长光线焦点位置不同。
+            像散：离轴点的子午光线和弧矢光线焦点不重合。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              不同像差对成像质量的影响各不相同。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">像差校正</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            像差校正的方法包括：选择合适的光学元件组合、
+            优化系统结构、使用特殊光学材料等。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              像差校正是光学系统设计的重要环节。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">评价方法</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            像差评价方法包括：点列图分析、波像差分析、
+            MTF分析等。现代光学设计软件提供了多种评价工具。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              合理的评价方法有助于优化系统性能。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='b4.html'" class="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上级
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='b6.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

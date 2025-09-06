@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光的干涉与衍射</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光的波动性特征</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">光的干涉</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光的干涉是两列或多列相干光波相遇时，由于波的叠加而形成的光强分布现象。
+            杨氏双缝实验是最著名的光干涉实验之一。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              干涉条纹的形成需要相干光源，这也是为什么激光常用于干涉实验。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">干涉条件</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            形成稳定干涉图样的条件包括：光源的单色性、相干性，以及光程差满足特定条件。
+            光程差为波长整数倍时形成亮纹，半波长奇数倍时形成暗纹。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              干涉条件的严格要求解释了为什么日常光源难以观察到干涉现象。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">光的衍射</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            当光波遇到障碍物时，会发生绕射现象，使光波偏离直线传播的方向。
+            单缝衍射和圆孔衍射是典型的衍射现象。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              衍射现象限制了光学仪器的分辨率，这就是阿贝衍射极限。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">应用实例</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            干涉和衍射现象在光学仪器中有广泛应用，如迈克尔逊干涉仪、光栅光谱仪等。
+            这些现象也是全息技术的基础。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              干涉和衍射的应用使得高精度测量和光学成像成为可能。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='a4.html'" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上级
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='a6.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

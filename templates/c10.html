@@ -1,0 +1,246 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.5.4 衍射传播中的采样问题</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📊</span>
+            </div>
+            衍射传播中的采样问题
+          </h3>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              在光学衍射问题中，采样问题指的是如何从有限的光场数据中准确地恢复光波的传播信息。由于计算机处理衍射问题时需要对光波场进行离散化，因此必须确保采样间隔足够小，以便能够正确地描述衍射效应。采样问题的核心在于如何选择合适的采样间隔以及如何避免采样不足或过度采样的情况。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📐</span>
+            </div>
+            1. 采样定理
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            采样问题的根本在于如何选择适当的采样频率，以保证光波在经过采样后能够被准确恢复。根据奈奎斯特采样定理（Nyquist Sampling Theorem），采样频率必须大于信号带宽的两倍才能避免混叠现象，即：
+          </p>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ f_s \geq 2 f_{max} \]
+            </div>
+          </div>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-3 rounded-lg border border-green-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( f_s \)</strong>：采样频率
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-3 rounded-lg border border-blue-200">
+              <p class="text-sm text-gray-700">
+                <strong>\( f_{max} \)</strong>：信号的最大频率
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              在光学衍射问题中，信号的频率通常与光波的空间频率相关，因此采样频率必须足够高，以便能够准确捕捉衍射场的空间频率分布。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌊</span>
+            </div>
+            2. 空间频率与光波的关系
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            在衍射传播中，光波的空间频率决定了光波的变化速率。光波的空间频率与波长 \( \lambda \) 以及传播方向有关。假设在空间中某一方向上，光波的传播方向是沿着 \( x \)-轴，空间频率 \( f_x \) 与光波的波数 \( k_x \) 之间的关系为：
+          </p>
+          
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ f_x = \frac{k_x}{2\pi} \]
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              其中 \( k_x = \frac{2\pi}{\lambda} \sin(\theta_x) \)，而 \( \theta_x \) 是光波传播方向与观察方向之间的角度。根据这个关系，光波的空间频率决定了光波的"细节"程度，也就是我们需要多少个采样点来捕捉光波的变化。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">⚙️</span>
+            </div>
+            3. 采样间隔与衍射效应
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            在衍射问题中，采样间隔（或采样步长）是决定计算精度和计算资源的关键因素。采样间隔过大可能导致信息丢失，导致无法准确重建光场；而采样间隔过小则会增加计算量。为了避免采样不足，通常需要根据衍射场的空间频率选择适当的采样间隔。
+          </p>
+          
+          <p class="text-base sm:text-lg">在远场衍射问题中，通常可以使用傅里叶光学方法进行计算。根据光学傅里叶变换，光场的采样间隔 \( \Delta x \) 和空间频率的最大值 \( f_{max} \) 之间存在以下关系：</p>
+          
+          <div class="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ \Delta x \leq \frac{\lambda}{2 f_{max}} \]
+            </div>
+          </div>
+          
+          <div class="bg-purple-50 border-l-4 border-purple-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              如果采样间隔小于上述值，则可以准确重建光波的传播。否则，将发生信息丢失，导致衍射图样的失真。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔧</span>
+            </div>
+            4. 采样定理在衍射计算中的应用
+          </h3>
+          
+          <p class="text-base sm:text-lg">在实际的衍射计算中，采样问题通常出现在两方面：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">📏</span>
+                空间域采样
+              </h4>
+              <p class="text-sm text-gray-700">
+                在空间域中，对衍射场进行离散化时，必须确保采样间隔足够小，以保证能量密度和场强分布能够得到准确恢复。尤其是在计算复杂光学元件的衍射场时，细致的空间采样可以减少计算误差。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🔄</span>
+                频率域采样
+              </h4>
+              <p class="text-sm text-gray-700">
+                在频率域进行光场的傅里叶变换时，频域采样间隔决定了能够捕捉的空间频率范围。频率域的采样必须足够细致，以避免混叠现象，这对于远场衍射计算尤为重要。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">⚠️</span>
+            </div>
+            5. 衍射传播中的过度采样和欠采样
+          </h3>
+          
+          <p class="text-base sm:text-lg">在衍射传播的数值模拟中，过度采样和欠采样都会影响结果的准确性：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg border border-red-200">
+              <h4 class="font-semibold text-red-800 mb-2 flex items-center">
+                <span class="mr-2">📈</span>
+                过度采样
+              </h4>
+              <p class="text-sm text-gray-700">
+                如果采样间隔过小，计算会变得非常繁琐，甚至在某些情况下导致数值不稳定，增加计算时间和存储需求。因此，在实际应用中要避免过度采样。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-lg border border-orange-200">
+              <h4 class="font-semibold text-orange-800 mb-2 flex items-center">
+                <span class="mr-2">📉</span>
+                欠采样
+              </h4>
+              <p class="text-sm text-gray-700">
+                欠采样会导致信息丢失，尤其是在高频部分，可能会产生严重的伪影（aliasing）效应，使得衍射图样的重建不准确。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-pink-500 to-rose-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">💡</span>
+            </div>
+            6. 解决衍射传播中的采样问题
+          </h3>
+          
+          <p class="text-base sm:text-lg">为了有效解决采样问题，通常采用以下方法：</p>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">⚖️</span>
+                调整采样间隔
+              </h4>
+              <p class="text-sm text-gray-700">
+                根据光源的波长和衍射源的空间频率，合理选择采样间隔，以确保不会发生欠采样或过度采样。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">🚀</span>
+                高效的傅里叶变换方法
+              </h4>
+              <p class="text-sm text-gray-700">
+                使用快速傅里叶变换（FFT）等高效算法，减少计算复杂度并保证精度。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                <span class="mr-2">🏗️</span>
+                分层采样
+              </h4>
+              <p class="text-sm text-gray-700">
+                对于大范围的衍射问题，可以使用分层采样方法，即在靠近光源的区域采用较小的采样间隔，而在远场区域采用较大的采样间隔。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              衍射传播中的采样问题是光学计算中的一个关键问题，合理的采样可以确保准确恢复光场并避免计算误差。根据奈奎斯特定理，采样间隔必须足够小，以便捕捉光波的高频成分。通过合适的采样策略，可以在保证精度的同时，降低计算量，并有效解决过度采样和欠采样的问题。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c9.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c11.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

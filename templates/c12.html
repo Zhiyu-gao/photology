@@ -1,0 +1,147 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.6.1 透镜的傅里叶变换</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔬</span>
+            </div>
+            透镜的傅里叶变换
+          </h3>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              在光学中，透镜的作用可以通过傅里叶变换的理论来描述。傅里叶变换是分析和理解光学成像系统中重要工具，它将空间域中的光场转换为频率域中的信息。透镜作为一种重要的光学元件，其对光波的作用可以通过傅里叶变换来理解，尤其是在成像系统中，透镜的作用是将物体的空间信息转换到频率域中。
+            </p>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📐</span>
+            </div>
+            1. 傅里叶变换与光学系统
+          </h3>
+          <p class="text-base sm:text-lg">傅里叶变换在光学中的核心作用是通过频域来表征和分析光波的传播和衍射。当光波通过透镜时，透镜对光场进行调制和变换，这个过程可以用傅里叶变换来精确描述。简单来说，透镜将空间域的光波映射到其对应的频率域，并对其进行处理。</p>
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ U_2(f_x, f_y) = \mathcal{F}\{U_1(x, y)\} \]
+            </div>
+          </div>
+          <p class="text-base sm:text-lg">其中，\( U_1(x, y) \) 是入射光场在空间域中的分布，\( U_2(f_x, f_y) \) 是光场在频域中的表示，\( \mathcal{F} \) 表示傅里叶变换。</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔎</span>
+            </div>
+            2. 透镜的作用与傅里叶变换
+          </h3>
+          <p class="text-base sm:text-lg">理想透镜的作用可以通过傅里叶变换来描述，尤其是在远场衍射的情况下。透镜的作用相当于在空间域中进行一个特定的空间滤波操作，并且能够对频率成分进行放大或缩小。</p>
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ U_2(x, y) = \mathcal{F}^{-1}\left\{ H(f_x, f_y) \cdot U_1(f_x, f_y) \right\} \]
+            </div>
+          </div>
+          <p class="text-base sm:text-lg">其中，\( H(f_x, f_y) \) 是透镜的传递函数，\( U_1(f_x, f_y) \) 是入射光场在频率域中的表示，\( \mathcal{F}^{-1} \) 是傅里叶逆变换。透镜的传递函数 \( H(f_x, f_y) \) 与透镜的焦距和形状相关。</p>
+
+          <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs">💡</span>
+            </div>
+            2.1 透镜的传递函数
+          </h4>
+          <div class="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ H(f_x, f_y) = e^{i \pi f_x^2 f_y^2 f} \]
+            </div>
+          </div>
+          <p class="text-base sm:text-lg">其中，\( f_x, f_y \) 是空间频率，\( f \) 是透镜的焦距。透镜的作用在空间域中对应着聚焦光场的形成，而在频率域中则表现为通过一个滤波操作来选择和增强不同的频率成分。</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🖼️</span>
+            </div>
+            3. 傅里叶变换与成像
+          </h3>
+          <p class="text-base sm:text-lg">透镜的傅里叶变换在成像中起着关键作用。在成像过程中，物体的空间信息被传输到透镜焦平面，通过透镜的傅里叶变换，物体的信息得以聚焦并形成一个清晰的图像。</p>
+          <p class="text-base sm:text-lg">根据傅里叶光学原理，成像过程中的透镜可以看作是将物体的空间域信息转换为频率域的过程。物体在频率域的分布通过透镜的傅里叶变换进行滤波后，最终在焦平面上形成图像。</p>
+
+          <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-5 h-5 bg-gradient-to-r from-pink-500 to-rose-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs">🔬</span>
+            </div>
+            3.1 透镜与空间滤波
+          </h4>
+          <p class="text-base sm:text-lg">透镜的傅里叶变换使得光学成像系统中的空间滤波成为可能。通过适当设计透镜的传递函数 \( H(f_x, f_y) \)，可以对不同频率成分的光波进行选择性放大或衰减。这一特性在许多光学应用中非常重要，比如图像增强、图像处理等。</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌐</span>
+            </div>
+            4. 傅里叶光学中的应用
+          </h3>
+          <p class="text-base sm:text-lg">傅里叶变换理论在光学中的应用非常广泛，尤其在成像和衍射问题中。透镜的傅里叶变换使得我们能够用频率域的视角来分析和理解光学成像系统。以下是傅里叶光学在实际中的一些应用：</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">🔭</span>
+                光学成像
+              </h4>
+              <p class="text-sm text-gray-700">
+                通过透镜的傅里叶变换，可以从物体的空间信息得到清晰的图像，尤其在显微镜、望远镜等光学仪器中。
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🌊</span>
+                衍射与全息
+              </h4>
+              <p class="text-sm text-gray-700">
+                傅里叶光学提供了分析衍射图样和全息图样的重要工具，通过傅里叶变换可以重建物体的三维信息。
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">🖌️</span>
+                图像处理
+              </h4>
+              <p class="text-sm text-gray-700">
+                傅里叶光学的频率滤波特性可以用来对图像进行处理，进行去噪、锐化等操作。
+              </p>
+            </div>
+          </div>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              透镜的傅里叶变换是傅里叶光学中的一个重要概念，通过它我们可以理解透镜在光学成像系统中的作用。傅里叶变换使得透镜能够将空间域中的光波转换到频率域，并通过滤波操作选择不同的频率成分，从而形成清晰的图像。透镜的傅里叶变换不仅在传统的光学成像中具有重要应用，还在现代的图像处理和衍射成像技术中发挥着关键作用。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c11.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      <button onclick="window.location.href='c13.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

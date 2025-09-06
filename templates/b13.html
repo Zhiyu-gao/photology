@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-4 sm:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">物理知识点</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-teal-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-3 sm:p-4 sm:p-3 sm:p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+<!-- 页面标题 -->
+<h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">物理知识点 </h4>
+<!-- 内容卡片 -->
+<!-- 页面标题 -->
+<h4 >物理知识点 </h4>
+<!-- 内容卡片 -->
+<h4 >物理知识点 </h4>
+<h4 >3.4.2 最小二乘法</h4>
+<p class="text-base sm:text-lg">光线追迹完成后，需要有一个数值来定量化评价光学系统的好坏，为进一步优化提供指导，一般使用光学评价函数的方法。常见的评价函数有时域的PSF和空域的MTF等。光学评价函数的一般表达式如下：</p>
+\[
+MF = \sum_{i}^{N} w_i (c_i - t_i)^2
+\] 
+<p class="text-base sm:text-lg">其中， N 是 N 种约束， <i>w<sub>i</sub></i> 是权重，<i>c<sub>i</sub></i> 是对应项的当前值， <i>t<sub>i</sub></i> 是目标值。权重约束有绝对约束和边界约束。如果是绝对约束，则权重必须等于某个量，比如焦距，否则就要加一些惩罚。边界约束可以指定约束范围，相对宽松一点。</p>
+<p class="text-base sm:text-lg">MTF 和 PSF 函数几乎包含了有效焦距、相对孔径（F#）、光瞳位置、近轴角度、高度和材料属性等光学系统的所有物理参数。可对特定参数增加不同权重来约束对应的参数，从而实现优化的目的。但是MTF和PSF的计算速度相对较慢，在资源有限的情况下，本书中构建的MF采用了实际光线偏离理想位置的差值进行优化，并将焦距、相对孔径（F#）等确定系统大小的基本参数都写到了评价函数中。</p>
+<p class="text-base sm:text-lg">使用最小二乘法来最小化MF可以缩小光学系统像差，使主光线尽量位于理想像面。本书中将各镜面的曲率半径R和镜面之间的距离（简称镜面距离）t作为变量对光学系统进行优化，其中变量集为 <i>X(x<sub>1</sub>, ..., x<sub>N</sub>)</i> ，每个像点距离理想像点位置的偏差记作 <i>F(F<sub>1</sub>, ..., F<sub>m</sub>)</i> ，每个像差都是结构参数的函数，记作 <i>f<sub>i</sub>(X) (i=1, ..., m)</i>。</p>
+<p class="text-base sm:text-lg">结构变量集与目标像差联立可得到如下非线性方程组，即：</p>
+\[
+\begin{cases}
+F_1 = f_1(x_1, \cdots, x_N) \\
+\vdots \\
+F_m = f_m(x_1, \cdots, x_N)
+\end{cases}
+\]</h1>
+<!-- 导航按钮 -->
+<button onclick="window.location.href='a.html'" >
+<span >←</span>
+返回上一页
+</button>
+<button onclick="window.location.href='photology.html'" >
+<span >🏠</span>
+返回主页
+</button>
+<button onclick="window.location.href='a2.html'" >
+下一页
+<span >→</span>
+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:p-4">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center" text-sm sm:text-base>
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

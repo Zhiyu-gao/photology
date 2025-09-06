@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物理知识点 - 历史</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.net/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.net/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        MathJax = {
+            loader: {load: ['[tex]/physics']},
+            tex: {packages: {'[+]': ['physics']}}
+        };
+      </script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: black;
+            font-weight: bold;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            width: 100%;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: black;
+            text-align: justify;
+            font-size: 18px;
+        }
+
+        .gradient-button {
+            background: linear-gradient(45deg, #ff6ec7, #ffcd02);
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: background 0.4s, transform 0.2s, box-shadow 0.3s;
+            margin: 10px;
+            width: 220px;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(45deg, #ffcd02, #ff6ec7);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .gradient-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* 小屏幕响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .gradient-button {
+                width: 180px;
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        MathJax = {
+            loader: {load: ['[tex]/physics']},
+            tex: {packages: {'[+]': ['physics']}}
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  {% block body %}
+  {% endblock %}
+</body>
+</html>

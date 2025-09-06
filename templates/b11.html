@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-4 sm:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">物理知识点</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-teal-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-3 sm:p-4 sm:p-3 sm:p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+<!-- 页面标题 -->
+<h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">物理知识点 </h4>
+<!-- 内容卡片 -->
+<!-- 页面标题 -->
+<h4 >物理知识点 </h4>
+<!-- 内容卡片 -->
+<h4 >物理知识点 </h4>
+<h4 >3.3.3 实际像差计算</h4>
+<p class="text-base sm:text-lg">在设计光学系统时，我们通过光线追迹获得像面位置和各种像差的数值，从而评估光学系统的性能，判断所设计系统的优劣，并通过优化来提高光学系统的性能。以三片式光学系统为例，我们利用本章学习的知识进行典型像差的计算。下面我们先给出计算中涉及的一些基本概念：</p>
+<ol>
+<li><b>光学系统焦面：</b>轴上平行光束在光学系统的像空间汇聚成的一个点与光轴的垂面称为光学系统焦面。</li>
+<li><b>光束最佳像面：</b>在指定视场下，同一视场发出的光称为光束，横向像差最小的面称为该视场下的光束最佳像面。</li>
+<li><b>光学系统像面：</b>使所有视场的光束弥散斑RMS值最小的面称为光学系统像面，其也可以是轴上光束的最佳像面。这是一个相对的概念，是接收图像的探测器所放置的位置。</li>
+<li><b>横向像差：</b>光束经过光学系统后在像面上形成弥散斑，而并非一个理想像点。这个弥散斑与理想像点之间的偏差叫作横向像差，也叫作垂轴像差，一般用点列图来表征。</li>
+<li><b>轴向像差：</b>轴向像差也叫径向像差，是光束最佳像面和光学系统实际像面之间的轴向位置偏差。</li>
+<li><b>畸变：</b>我们选择光学成像系统理想成像面上的主光线并使用实际光线追迹公式，计算得到的成像点像高和使用近轴光线追迹公式计算得到的成像点像高的偏差为畸变。</li>
+</ol>
+<!-- 导航按钮 -->
+<button onclick="window.location.href='a.html'" >
+<span >←</span>
+返回上一页
+</button>
+<button onclick="window.location.href='photology.html'" >
+<span >🏠</span>
+返回主页
+</button>
+<button onclick="window.location.href='a2.html'" >
+下一页
+<span >→</span>
+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:p-4">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center" text-sm sm:text-base>
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

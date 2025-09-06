@@ -1,0 +1,133 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">完善成像条件的应用---设计椭球面</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔧</span>
+            </div>
+            椭球面设计问题
+          </h3>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-200">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">图 2.26 设计椭球面</h4>
+            <p class="text-base sm:text-lg text-center">
+              已知镜面为椭球面，光线由 A 点发出，B 点为接收点，其中 A(-40, 0)，B(40, 0)，P(0, 30)，反射镜直径为 60 mm。在 Python 里画出来满足条件的反射镜。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📐</span>
+            </div>
+            具体思路
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            方法一：椭圆示意图如图 2.27 所示，根据解析几何，焦点为 F₁(-c, 0) 和 F₂(c, 0)，且椭圆满足以下方程（可直接用函数实现）：
+          </p>
+          
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 p-4 rounded-lg border border-green-200">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">图 2.27 椭圆示意图</h4>
+            <div class="space-y-2">
+              <div class="bg-white p-3 rounded text-center shadow-sm">
+                <p class="text-sm font-mono text-gray-800">\(|MF₁| + |MF₂| = 2a \quad (2a > 2c > 0)\)</p>
+              </div>
+              <div class="bg-white p-3 rounded text-center shadow-sm">
+                <p class="text-sm font-mono text-gray-800">\(b² = a² - c²\)</p>
+              </div>
+              <div class="bg-white p-3 rounded text-center shadow-sm">
+                <p class="text-sm font-mono text-gray-800">\(x²/a² + y²/b² = 1 \quad (a > b > 0)\)</p>
+              </div>
+            </div>
+          </div>
+          
+          <p class="text-base sm:text-lg">所以当 y > 0 时，</p>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ y = b \sqrt{1 - x²/a²} \]
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">💻</span>
+            </div>
+            参数输入
+          </h3>
+          
+          <form action="" method="post" enctype="multipart/form-data" class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-lg border border-gray-200">
+            <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">在这里输入你的数据</h4>
+            
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">椭圆参数 c</label>
+                <input type="text" placeholder="40" name="c" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+              
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">椭圆参数 b</label>
+                <input type="text" placeholder="30" name="b" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+              
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">反射镜直径 (cm)</label>
+                <input type="text" placeholder="6" name="d" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+            </div>
+            
+            <div class="text-center">
+                  {% csrf_token %}
+              <button type="submit" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                生成光线图
+              </button>
+            </div>
+          </form>
+          
+          {% if img_b64 %}
+          <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">生成的光线图</h4>
+            <div class="text-center">
+              <img src="data:image/png;base64,{{ img_b64 }}" alt="光线图" class="max-w-full h-auto rounded-lg shadow-md">
+            </div>
+          </div>
+          {% endif %}
+          
+          {% if error %}
+          <div class="bg-red-50 border-l-4 border-red-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-red-700">{{ error }}</p>
+          </div>
+          {% endif %}
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='sy.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回章节
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

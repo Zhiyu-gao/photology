@@ -1,0 +1,211 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.6.2 光学成像系统分析</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔬</span>
+            </div>
+            光学成像系统分析
+          </h3>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              光学成像系统是利用光学元件（如透镜、反射镜等）将物体的图像投射到接收介质（如照相机传感器、视网膜等）上的系统。分析光学成像系统的关键在于理解其成像原理、光线传播、透镜的作用以及图像质量的影响因素。光学成像的核心原理是通过光的折射、反射和传播将物体信息传递到成像平面上。
+            </p>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🧩</span>
+            </div>
+            1. 光学成像系统的基本组成
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">🔹</span>
+                物体（Object）
+              </h4>
+              <p class="text-sm text-gray-700">光学系统中待成像的物体，其位置、尺寸和形状影响最终图像的形成。</p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🔸</span>
+                光学元件（Optical Elements）
+              </h4>
+              <p class="text-sm text-gray-700">包括透镜、反射镜、光圈等，用于操控光线的传播路径，影响成像的清晰度和质量。</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">🔻</span>
+                图像平面（Image Plane）
+              </h4>
+              <p class="text-sm text-gray-700">成像系统中的一个平面，光线在该平面上交汇并形成图像，通常是照相机的传感器或眼睛的视网膜。</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg border border-yellow-200">
+              <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
+                <span class="mr-2">💡</span>
+                光源（Light Source）
+              </h4>
+              <p class="text-sm text-gray-700">提供照射物体的光线，通常是自然光或人造光源。</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📏</span>
+            </div>
+            2. 光学成像的基本原理
+          </h3>
+          <p class="text-base sm:text-lg">光学成像依赖于光的传播和折射规律。物体的光线通过光学元件的折射或反射作用，最终汇聚在图像平面上形成图像。根据不同的光学元件，成像过程可以有不同的表现形式。常见的成像类型有：</p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">🔵</span>
+                实像
+              </h4>
+              <p class="text-sm text-gray-700">光线在图像平面上会聚形成的图像，通常可以通过屏幕或胶片看到。</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">🔴</span>
+                虚像
+              </h4>
+              <p class="text-sm text-gray-700">光线表面上并未实际汇聚，但通过透镜的折射作用，眼睛会产生一副图像。</p>
+            </div>
+          </div>
+          <p class="text-base sm:text-lg">物体到图像平面的光线传播可以通过几何光学中的光线追踪法进行分析，特别是在使用透镜、反射镜等光学元件时，光线的折射、反射规律起着决定性作用。</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔎</span>
+            </div>
+            3. 透镜的作用与成像分析
+          </h3>
+          <p class="text-base sm:text-lg">透镜是光学成像系统中常用的光学元件。透镜通过折射作用改变光线的传播路径，并形成物体的实像或虚像。根据透镜的形状，可以分为凹透镜和凸透镜。</p>
+          <p class="text-base sm:text-lg">对于一个凸透镜，物体到透镜的距离（物距）\( u \)、图像到透镜的距离（像距）\( v \)和透镜的焦距\( f \)之间满足以下的透镜方程：</p>
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ \frac{1}{f} = \frac{1}{v} + \frac{1}{u} \]
+            </div>
+          </div>
+          <p class="text-base sm:text-lg">其中，\( f \) 是透镜的焦距，\( u \) 是物距，\( v \) 是像距。通过透镜方程，可以计算出不同物体与透镜之间的关系，从而推算出成像的位置和类型（实像或虚像）。</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌀</span>
+            </div>
+            4. 光学成像的像差分析
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">⚪</span>
+                球面像差
+              </h4>
+              <p class="text-sm text-gray-700">由于透镜的曲率不同，光线从透镜的不同部分折射后不能完全汇聚到同一点，造成图像模糊。</p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">🌈</span>
+                色差
+              </h4>
+              <p class="text-sm text-gray-700">不同波长的光经过透镜时，折射率不同，导致不同颜色的光线聚焦在不同的位置。</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">📐</span>
+                像场曲率
+              </h4>
+              <p class="text-sm text-gray-700">透镜无法将平面物体完全映射到平面图像平面上，导致图像中心和边缘的焦距不同。</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg border border-yellow-200">
+              <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
+                <span class="mr-2">☄️</span>
+                彗差
+              </h4>
+              <p class="text-sm text-gray-700">当物体不在透镜的光轴上时，产生的非对称成像。</p>
+            </div>
+          </div>
+          <p class="text-base sm:text-lg">通过使用多个透镜组合或特别设计的光学元件，可以最小化这些像差，从而提高成像质量。</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📊</span>
+            </div>
+            5. 光学成像系统的解析方法
+          </h3>
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 p-4 rounded-lg border border-green-200">
+            <p class="text-base sm:text-lg"><strong>光学传递函数（OTF）：</strong> OTF是描述成像系统在频率域中响应特性的函数，通常由系统的调制传递函数（MTF）和相位传递函数（PTF）组成。MTF表示系统对不同空间频率的调制能力，而PTF表示相位响应。</p>
+          </div>
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-200">
+            <p class="text-base sm:text-lg"><strong>点扩展函数（PSF）：</strong> PSF是描述光学成像系统对点源的响应，它反映了成像系统的分辨能力。理想情况下，PSF是一个狭窄的点，但由于像差和光学系统的限制，实际PSF会有一定的扩展。</p>
+          </div>
+          <p class="text-base sm:text-lg">通过分析OTF和PSF，可以评估光学成像系统的成像质量，包括分辨率、对比度、以及失真程度。</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🛠️</span>
+            </div>
+            6. 成像系统的设计和优化
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">🔧</span>
+                选取合适的光学元件
+              </h4>
+              <p class="text-sm text-gray-700">根据所需的成像质量，选择适当的透镜、反射镜等光学元件。</p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🔗</span>
+                多透镜组合
+              </h4>
+              <p class="text-sm text-gray-700">使用多个透镜组合可以减少像差，改善成像质量。</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">💻</span>
+                数字后处理
+              </h4>
+              <p class="text-sm text-gray-700">通过计算机算法对图像进行去噪、锐化等处理，进一步提高图像质量。</p>
+            </div>
+          </div>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              光学成像系统分析是光学和成像技术的基础。通过理解光的传播、透镜的作用、成像原理以及像差分析，能够设计和优化光学系统，从而实现高质量的图像生成。随着科技的发展，光学成像技术已经广泛应用于各个领域，如显微镜、望远镜、照相机等，并且在医学成像、科学研究和工业检测等方面发挥着重要作用。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c12.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      <button onclick="window.location.href='c14.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

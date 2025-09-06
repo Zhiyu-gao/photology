@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光学系统基础</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光学系统的基本概念与原理</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">光学系统概述</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光学系统是由各种光学元件组合而成的系统，用于控制和利用光的传播。
+            基本光学元件包括透镜、棱镜、反射镜等。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              光学系统的设计需要考虑光的传播规律和各种光学现象。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">基本光学元件</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            透镜是最基本的光学元件，可分为凸透镜和凹透镜。
+            反射镜包括平面镜、球面镜和抛物面镜等。
+            棱镜可用于折射和色散光线。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              每种光学元件都有其特定的功能和应用场景。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">光学系统特性</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光学系统的主要特性包括焦距、孔径、视场、分辨率等。
+            这些参数决定了系统的成像质量和应用范围。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              系统设计需要在各项参数之间找到最佳平衡。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">应用领域</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            光学系统广泛应用于显微镜、望远镜、照相机等仪器中。
+            现代光学系统还包括激光系统、光纤通信系统等。
+          </p>
+          <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+            <p class="text-sm text-green-800">
+              光学系统的发展推动了科技进步和人类认知的提升。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='b.html'" class="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上级
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='b3.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

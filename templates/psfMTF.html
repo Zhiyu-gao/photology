@@ -1,0 +1,173 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 页面标题 -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">光学系统PSF和MTF的计算</h1>
+      <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">探索光学系统的点扩散函数(PSF)和调制传递函数(MTF)</p>
+      <div class="w-32 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-600 mx-auto rounded-full mt-6"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+      <!-- 问题描述 -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">参数说明</h2>
+        <div class="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-500">
+          <p class="text-gray-700 leading-relaxed">
+            通过输入不同的光学系统参数，我们可以计算系统的PSF（点扩散函数）和MTF（调制传递函数）。
+            这些参数包括：归一化图像平面坐标(u₀,v₀)、散焦量、球差、彗差、像散、场曲和畸变等。
+          </p>
+        </div>
+      </div>
+
+      <!-- 输入表单 -->
+      <form action="" method="post" enctype="multipart/form-data" class="space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">参数输入</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- 归一化图像平面坐标u0 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">归一化图像平面坐标 (u₀)</label>
+            <input type="text" name="u0" value="0" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入u₀坐标">
+          </div>
+
+          <!-- 归一化图像平面坐标v0 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">归一化图像平面坐标 (v₀)</label>
+            <input type="text" name="v0" value="0" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入v₀坐标">
+          </div>
+
+          <!-- 散焦 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">散焦量 (W₀₂₀)</label>
+            <input type="text" name="wd" value="0" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入散焦量">
+            <p class="mt-1 text-xs text-gray-500">表示像面偏离理想位置的程度</p>
+          </div>
+
+          <!-- 球差 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">球差 (W₀₄₀)</label>
+            <input type="text" name="w040" value="4.963" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入球差系数">
+            <p class="mt-1 text-xs text-gray-500">表示光线与光轴距离不同导致的像差</p>
+          </div>
+
+          <!-- 彗差 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">彗差 (W₁₃₁)</label>
+            <input type="text" name="w131" value="2.637" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入彗差系数">
+            <p class="mt-1 text-xs text-gray-500">表示离轴点的不对称像差</p>
+          </div>
+
+          <!-- 像散 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">像散 (W₂₂₂)</label>
+            <input type="text" name="w222" value="9.025" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入像散系数">
+            <p class="mt-1 text-xs text-gray-500">表示子午面和弧矢面焦点不重合的像差</p>
+          </div>
+
+          <!-- 场曲 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">场曲 (W₂₂₀)</label>
+            <input type="text" name="w220" value="7.536" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入场曲系数">
+            <p class="mt-1 text-xs text-gray-500">表示像面弯曲的程度</p>
+          </div>
+
+          <!-- 畸变 -->
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700">畸变 (W₃₁₁)</label>
+            <input type="text" name="w311" value="0.157" 
+              class="focus:ring-purple-500 focus:border-purple-500 block w-full pl-4 pr-4 sm:text-sm border-gray-300 rounded-md"
+              placeholder="请输入畸变系数">
+            <p class="mt-1 text-xs text-gray-500">表示像的位置偏离理想位置的程度</p>
+          </div>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="mt-8 flex justify-center">
+              {% csrf_token %}
+          <button type="submit" 
+            class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold 
+            hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            计算PSF和MTF
+          </button>
+        </div>
+      </form>
+
+      <!-- 结果显示 -->
+      {% if img_b64 %}
+      <div class="mt-12 space-y-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">计算结果</h2>
+        
+        <!-- PSF图 -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-700">点扩散函数 (PSF)</h3>
+          <div class="bg-white rounded-xl border-2 border-gray-200 p-4">
+            <img src="data:image/png;base64,{{img_b64}}" alt="PSF图" class="mx-auto"/>
+          </div>
+        </div>
+
+        <!-- MTF图 -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-700">调制传递函数 (MTF)</h3>
+          <div class="bg-white rounded-xl border-2 border-gray-200 p-4">
+            <img src="data:image/png;base64,{{img_b64_1}}" alt="MTF图" class="mx-auto"/>
+          </div>
+        </div>
+
+        <!-- 相位图 -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-700">波前相位图</h3>
+          <div class="bg-white rounded-xl border-2 border-gray-200 p-4">
+            <img src="data:image/png;base64,{{img_b64_2}}" alt="相位图" class="mx-auto"/>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if error %}
+      <div class="mt-6">
+        <div class="bg-red-50 border-l-4 border-red-500 p-4">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-red-700">{{error}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-6">
+      <button onclick="window.location.href='photology.html'" 
+        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-3 rounded-xl font-semibold 
+        hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

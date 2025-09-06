@@ -1,0 +1,131 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">3.1.3 单透镜</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-teal-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔍</span>
+            </div>
+            单透镜
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            透镜是光学成像系统中最常见的元件。一般来说，透镜由一定厚度、折射率特定的材料制作而成，其前后表面都是球面的，这被称为光学意义上的厚透镜。在厚度影响较小的场合，计算时可以忽略透镜的厚度，这时可称为薄透镜近似。厚透镜的焦距计算原理图如图 3.6 所示。
+          </p>
+          
+          <div class="bg-gradient-to-r from-green-50 to-teal-50 p-4 rounded-lg border border-green-200">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">图3.6 厚透镜的焦距计算原理图</h4>
+          </div>
+          
+          <p class="text-base sm:text-lg">
+            厚透镜的焦距/折射能力、后截距计算公式可通过 NYU 追迹一条光线得到。
+          </p>
+          
+          <div class="space-y-6">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-3 flex items-center">
+                <span class="mr-2">📐</span>
+                (1) 焦距
+              </h4>
+              <p class="text-sm text-gray-700 mb-3">
+                焦距与前后表面半径、厚度、折射率等因素有关，参数不同对应不同的表达式，公式如下：
+              </p>
+              
+              <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+                <div class="text-lg sm:text-xl font-mono text-gray-800">
+                  \[ \phi = \frac{1}{f} = (n - 1) \left[ \frac{1}{R_1} - \frac{1}{R_2} + \frac{t(n - 1)}{n R_1 R_2} \right] \]
+                </div>
+              </div>
+              
+              <p class="text-sm text-gray-700 mt-3">
+                其中，\( \phi \) 为光焦度，\( f \) 为焦距，\( n \) 为透镜材料的折射率，\( t \) 为透镜厚度，\( R_1 \) 和 \( R_2 \) 分别为透镜前后表面的曲率半径。焦距的单位一般为 mm，光焦度是焦距的倒数，其单位为屈光度。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h4 class="font-semibold text-purple-800 mb-3 flex items-center">
+                <span class="mr-2">📏</span>
+                (2) 后截距
+              </h4>
+              <p class="text-sm text-gray-700 mb-3">
+                后截距是透镜最后表面到焦平面的距离。探测器的感光面放置在焦平面接收图像，外围有固定装置，因此后截距一般有要求，以适应固定装置的轴向距离。其表达式为：
+              </p>
+              
+              <div class="space-y-3">
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 p-3 rounded-lg text-center">
+                  <div class="text-base sm:text-lg font-mono text-gray-800">
+                    \[ l'_k = \frac{-y_k}{u'_k} \]
+                  </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 border-2 border-pink-200 p-3 rounded-lg text-center">
+                  <div class="text-base sm:text-lg font-mono text-gray-800">
+                    \[ h' = y_k + s'_k u'_k \]
+                  </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-rose-50 to-red-50 border-2 border-rose-200 p-3 rounded-lg text-center">
+                  <div class="text-base sm:text-lg font-mono text-gray-800">
+                    \[ \text{bfl} = \frac{-y_2}{u'_2} = f - \frac{f t (n - 1)}{n R_1} \]
+                  </div>
+                </div>
+              </div>
+              
+              <p class="text-sm text-gray-700 mt-3">
+                其中，\( y_2 \) 为第二个透镜面处光线的高度，\( u'_2 \) 为出射光线与光轴的夹角。后截距（BFL）可以表示为：
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded-r-lg">
+            <h4 class="font-semibold text-yellow-800 mb-2">薄透镜近似</h4>
+            <p class="text-gray-700">
+              对于薄透镜，厚度 \( t \) 近似为 0，因此可得到焦距的简化计算公式：
+            </p>
+            
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-200 p-4 sm:p-6 rounded-lg text-center mt-3">
+              <div class="text-lg sm:text-xl font-mono text-gray-800">
+                \[ \phi = \frac{1}{f} = (n - 1) \left( \frac{1}{R_1} - \frac{1}{R_2} \right) \]
+              </div>
+            </div>
+            
+            <p class="text-gray-700 mt-3">
+              上式表明，在薄透镜近似情况下，后截距等于焦距。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='b2.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='b4.html'" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

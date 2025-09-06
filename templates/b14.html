@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-4 sm:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">物理知识点</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-teal-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-3 sm:p-4 sm:p-3 sm:p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+<!-- 页面标题 -->
+<h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">物理知识点 </h4>
+<!-- 内容卡片 -->
+<!-- 页面标题 -->
+<h4 >物理知识点 </h4>
+<!-- 内容卡片 -->
+<h4 >物理知识点 </h4>
+<h4 >3.4.3 全局优化方法</h4>
+<p class="text-base sm:text-lg">最小二乘法的特点是不直接求解像差非线性方程组，而通过求差商来求解。也就是通过改变系统参数的初始值，并得到对整个系统评价指标的改变值与参数变化值之间的导数，从而得出两者之间的量化关系。但是这种方法非常依赖系统参数的初始值，因而求出的解往往局限于初始值附近，也就是局部最小值。局部最小值和全局最小值如图3.51所示。</p>
+<p class="text-base sm:text-lg"><strong>图3.51</strong> 局部最小值和全局最小值</p>
+<p class="text-base sm:text-lg">全局优化允许程序跳出当前的最小值，从而去寻找更多的可能。利用全局优化时，也许在当前情况下会导致损失函数变大，但是从全局角度来看，有可能找到更多的最小值。几种常见的全局优化方法如下：</p>
+<ol>
+<li><strong>模拟退火 (Simulated Annealing) 法：</strong>模拟退火算法来源于固体退火原理，是一种基于概率的算法。算法思想是，先从一个较高的初始温度出发，逐渐降低温度，直到温度降低到满足热平衡条件为止。在每个温度下进行n轮搜索，每轮搜索时对旧解添加随机扰动以生成新解，并按一定规则接受新解。</li>
+<li><strong>逃逸函数 (Escape Function) 法：</strong>逃逸函数法是指给定一个逃逸函数，填平当前的谷底，从而去搜索其他局部最小值。</li>
+<li><strong>神经网络 (Neural Network) 法：</strong>神经网络法是指构造能量函数，使其最小值对应问题的输出，通过计算每次神经节点的权重来判断传递与否，最终获得优化解。</li>
+</ol>
+<!-- 导航按钮 -->
+<button onclick="window.location.href='a.html'" >
+<span >←</span>
+返回上一页
+</button>
+<button onclick="window.location.href='photology.html'" >
+<span >🏠</span>
+返回主页
+</button>
+<button onclick="window.location.href='a2.html'" >
+下一页
+<span >→</span>
+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:p-4">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center" text-sm sm:text-base>
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

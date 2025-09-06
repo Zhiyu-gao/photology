@@ -1,0 +1,209 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">完善成像条件的应用---设计自由曲面单透镜</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔧</span>
+            </div>
+            自由曲面单透镜设计
+          </h3>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-200">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">设计要求</h4>
+            <p class="text-base sm:text-lg text-center">
+              要求设计一个透镜，使从R1和R2两点发出两束来自无穷远的光束，经过透镜后，这两束光束能完全汇聚于E1和E2两个像点。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📐</span>
+            </div>
+            具体实现思路
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            设计透镜实际就是首先算出透镜上表面以及下表面的一系列坐标，然后拟合就可以得到一个完整的透镜，具体步骤如下。
+          </p>
+          
+          <div class="space-y-4">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-3 flex items-center">
+                <span class="mr-2">1️⃣</span>
+                (1) 建立坐标系
+              </h4>
+              <p class="text-sm text-gray-700">
+                由于R1和R2两点发出的光线来自无穷远，因此给定的两个平面波会发出很多的光线。E1和E2是理想的像点位置，坐标分别为（-2，-15）和（2，-15）。以透镜上表面顶点O为坐标原点，建立直角坐标系；确定像点E1（-2，-15）和E2（2，-15）；以透镜R1和R2两束光的入射角度为8°或-8°（与y轴的夹角），两束光线与波面交点记作C、F，它们关于y轴对称；空气折射率n1为1，透镜折射率n2为1.5，透镜厚度为2mm；假定OD为2.03，根据折射定律算得D点坐标为（0.188，-2.021）。
+              </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-gradient-to-r from-green-50 to-teal-50 p-4 rounded-lg border border-green-200">
+                <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">图2.33 设计透镜过程原理图一</h4>
+              </div>
+              <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+                <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">图2.34 设计透镜过程原理图二</h4>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-3 flex items-center">
+                <span class="mr-2">2️⃣</span>
+                (2) 计算D（E）点的坐标
+              </h4>
+              <p class="text-sm text-gray-700">
+                OD长度×OD单位方向向量（根据折射矢量函数rfr()计算）。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h4 class="font-semibold text-purple-800 mb-3 flex items-center">
+                <span class="mr-2">3️⃣</span>
+                (3) 计算总光程
+              </h4>
+              <p class="text-sm text-gray-700">
+                OPL=n1×CO+n2×OD+n1×DE2
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg border border-yellow-200">
+              <h4 class="font-semibold text-yellow-800 mb-3 flex items-center">
+                <span class="mr-2">4️⃣</span>
+                (4) 根据下表面D点计算上表面G点的坐标
+              </h4>
+              <p class="text-sm text-gray-700">
+                光线E1→D→G→H，用到如下公式：<br>
+                ① n2×DG+n1×GH=OPL-n1E1D；<br>
+                ② 折射定律 n2sinθ2=n1sinθ1
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg border border-red-200">
+              <h4 class="font-semibold text-red-800 mb-3 flex items-center">
+                <span class="mr-2">5️⃣</span>
+                (5) 根据上表面G点计算透镜下表面J点的坐标
+              </h4>
+              <p class="text-sm text-gray-700">
+                光线I→G→J→E2，用到如下公式：<br>
+                ① GJ×n2+n1×JE2=OPL-n1×IG；<br>
+                ② 折射定律 n2sinθ2=n1sinθ1
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg border border-indigo-200">
+              <h4 class="font-semibold text-indigo-800 mb-3 flex items-center">
+                <span class="mr-2">6️⃣</span>
+                (6) 获取透镜上更多的点
+              </h4>
+              <p class="text-sm text-gray-700">
+                如图2.34所示：重复步骤（3）和（4）便可以得到更多透镜上的点的坐标，本示例重复了21次，共取得42个透镜上、下表面的点坐标。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">💻</span>
+            </div>
+            参数输入
+          </h3>
+          
+          <form action="" method="post" enctype="multipart/form-data" class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-lg border border-gray-200">
+            <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">在这里输入你的数据</h4>
+            
+            <div class="grid md:grid-cols-2 gap-4 mb-6">
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">空气折射率</label>
+                <input type="text" placeholder="1" name="n1" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+              
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">透镜折射率</label>
+                <input type="text" placeholder="30" name="n2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+              
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">光束入射角</label>
+                <input type="text" placeholder="6" name="theta" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+              
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">E1点坐标</label>
+                <input type="text" placeholder="[-2,-15]" name="E1" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+              
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">E2点坐标</label>
+                <input type="text" placeholder="[2,15]" name="E2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+              
+              <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">随机假定的点的长度</label>
+                <input type="text" placeholder="2.03" name="OD" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900">
+              </div>
+            </div>
+            
+            <div class="text-center">
+              <button type="submit" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                生成光线图
+              </button>
+            </div>
+</form>
+          
+          {% if img_b64 %}
+          <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">生成的光线图</h4>
+            <div class="text-center">
+              <img src="data:image/png;base64,{{ img_b64 }}" alt="光线图" class="max-w-full h-auto rounded-lg shadow-md">
+            </div>
+          </div>
+          {% endif %}
+          
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700 text-center">
+              请输入数据并点击提交按钮以生成图像
+            </p>
+          </div>
+          
+          {% if error %}
+          <div class="bg-red-50 border-l-4 border-red-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-red-700">{{ error }}</p>
+          </div>
+          {% endif %}
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='a91.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='b.html'" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

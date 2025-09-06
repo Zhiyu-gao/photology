@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-4 sm:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">物理知识点 4.1.2 光波的复振幅表示</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-3 sm:p-4 sm:p-3 sm:p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+
+
+<p class="text-base sm:text-lg mb-4">光波是一种横波，光波的传输如图4.1所示，电场矢量、磁场矢量以及传播方向两两垂直。在笛卡尔坐标系下，可将电场矢量和磁场矢量分解为x、y、z三个分量，这三个两两正交的电场和磁场分量分别满足波动方程。</p>
+<p class="text-base sm:text-lg mb-4">一种简化的光波表示方法是采用标量波的形式，即用标量 \( U \) 代替波动方程中的电场强度或磁场强度分量，可以得到标量波动方程为：</p>
+\[
+\nabla^2 U - \frac{1}{v^2} \frac{\partial^2}{\partial t^2} U = 0
+\]
+<p class="text-base sm:text-lg mb-4">其通解可用复数形式的复振幅表示，即：</p>
+\[
+U(\mathbf{r}, t) = U(\mathbf{r}) e^{-i \omega t}
+\]
+<p class="text-base sm:text-lg mb-4">式中，\(\mathbf{r}\) 表示空间任意一点的位置矢量。将上述复振幅简谐波代入波动方程可得到亥姆霍兹（Helmholtz）方程，即：</p>
+\[
+\nabla^2 U(\mathbf{r}) + k^2 U(\mathbf{r}) = 0
+\]
+<p class="text-base sm:text-lg mb-4">式中，\( k \) 是波矢量 \( \mathbf{k} \) 的大小，\( k = \frac{2\pi}{\lambda} \)。确定光波长的复振幅即可完全描述该处的场分布。</p>
+<p class="text-base sm:text-lg mb-4">任意光波的复振幅可由振幅 \( A(\mathbf{r}) \) 和相位 \( \varphi(\mathbf{r}) \) 表示，即：</p>
+\[
+U(\mathbf{r}) = A(\mathbf{r}) e^{i \varphi(\mathbf{r})}
+\]
+<p class="text-base sm:text-lg mb-4">当振幅为常数时，光波称为均匀波；当振幅为非常数时，光波称为非均匀波。相位函数为常数的表面称为等相位面或波前。</p>
+<p class="text-base sm:text-lg mb-4">两种常见的光波分别是平面波和球面波，其复振幅分别表示为：</p>
+\[
+U(\mathbf{r}) = A e^{i \mathbf{k} \cdot \mathbf{r}}
+\]
+\[
+U(\mathbf{r}) = \frac{A}{r} e^{i \mathbf{k} \cdot \mathbf{r}}
+\]
+<p class="text-base sm:text-lg mb-4">式中，\( A \) 是常数。在任意空间点（用位置矢量 \( \mathbf{r} \) 表示）处的光强可通过该处的复振幅计算得出，即：</p>
+\[
+I(\mathbf{r}) = |U(\mathbf{r})|^2 = U(\mathbf{r}) U^*(\mathbf{r})
+\]
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:p-4">
+      <button onclick="window.location.href='c1.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c3.html'" class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

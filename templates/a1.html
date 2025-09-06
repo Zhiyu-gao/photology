@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光的历史</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光学发展的历史进程</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">古代光学理论</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            古希腊时期，欧几里得在其著作《光学》中首次系统地阐述了光的直线传播定律，
+            并对平面镜反射现象进行了详细研究。他认为视觉是由眼睛发出的"视线"与物体相遇而产生的。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              欧几里得的光学理论虽然在解释机制上有误，但其对光的几何性质的描述至今仍有重要参考价值。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">中世纪发展</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            阿拉伯科学家阿尔哈桑(Ibn al-Haytham)在其著作《光学宝典》中，
+            首次正确指出光是从物体发出或反射到眼睛的，推翻了欧几里得的"视线说"。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              阿尔哈桑被誉为"现代光学之父"，他的工作为后世的光学研究奠定了基础。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">近代突破</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            17世纪，斯涅尔发现了光的折射定律，而笛卡尔则对其进行了数学表述。
+            牛顿通过三棱镜实验发现白光可以分解为不同颜色的光，开创了光谱学研究。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              这一时期的发现为现代光学的发展打下了坚实的理论基础。
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-6">现代发展</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            19世纪，杨氏双缝干涉实验证实了光的波动性，麦克斯韦的电磁理论统一了光、电和磁现象。
+            20世纪初，爱因斯坦解释光电效应确立了光的粒子性，形成了光的波粒二象性认识。
+          </p>
+          <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <p class="text-sm text-blue-800">
+              现代光学的发展极大地推动了科技进步，激光、光纤通信等技术改变了人类生活。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex justify-center space-x-4">
+      <button onclick="window.location.href='a.html'" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回上级
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+      <button onclick="window.location.href='a2.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        下一页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

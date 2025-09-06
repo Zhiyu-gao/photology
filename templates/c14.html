@@ -1,0 +1,222 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.6.3 光学系统像差</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔬</span>
+            </div>
+            光学系统像差
+          </h3>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              光学系统的像差是指成像过程中由于光学元件的几何形状、材料性质或光线传播的非理想因素引起的图像失真。理想情况下，光学系统能够将物体的每一条光线精确地聚焦到图像平面上。然而，由于光学元件的不完美、物体的不同位置、光线的不同波长等因素，图像会出现一些失真，这些失真被称为"像差"。
+            </p>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📚</span>
+            </div>
+            1. 像差的来源
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">🔹</span>
+                透镜的几何形状
+              </h4>
+              <p class="text-sm text-gray-700">透镜的形状不完美，如球面透镜的曲率不均匀，会导致光线不能完美聚焦，产生球面像差。</p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🔸</span>
+                光学元件的材料
+              </h4>
+              <p class="text-sm text-gray-700">光学元件的折射率可能随波长不同而变化（色差），导致不同颜色的光线聚焦到不同的位置。</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">🔻</span>
+                光线的传播角度
+              </h4>
+              <p class="text-sm text-gray-700">光线入射到透镜的角度不同，会导致不同光线的折射路径不同，影响成像精度。</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg border border-yellow-200">
+              <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
+                <span class="mr-2">💡</span>
+                光线的波长
+              </h4>
+              <p class="text-sm text-gray-700">不同波长的光线传播速度不同，会导致不同波长的光线聚焦位置不同，产生色差和其他像差。</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌀</span>
+            </div>
+            2. 常见的像差类型
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">⚪</span>
+                球面像差
+              </h4>
+              <p class="text-sm text-gray-700">当光线从透镜的不同部分传出时，由于透镜的曲率不同，光线汇聚在不同的焦点上，导致图像模糊。</p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">🌈</span>
+                色差
+              </h4>
+              <p class="text-sm text-gray-700">由于不同波长的光（颜色）在透镜中具有不同的折射率，导致不同颜色的光线聚焦在不同的位置。</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">☄️</span>
+                彗差
+              </h4>
+              <p class="text-sm text-gray-700">当光源位于透镜的光轴外时，光线的传播轨迹形成一个不对称的扩散图像，呈现出"彗星"的形状。</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg border border-yellow-200">
+              <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
+                <span class="mr-2">📐</span>
+                像场曲率
+              </h4>
+              <p class="text-sm text-gray-700">由于透镜的设计，图像平面可能并非平面，而是弯曲的，使得图像的中心和边缘焦点不同。</p>
+            </div>
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg border border-indigo-200">
+              <h4 class="font-semibold text-indigo-800 mb-2 flex items-center">
+                <span class="mr-2">🔲</span>
+                畸变
+              </h4>
+              <p class="text-sm text-gray-700">物体的形状在成像中发生了变形，常见的畸变有桶形畸变和枕形畸变。</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">🟣</span>
+                非球面像差
+              </h4>
+              <p class="text-sm text-gray-700">在非球面透镜中，由于透镜的复杂曲率，出现的各种像差，包括球面像差和其他几何失真。</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📐</span>
+            </div>
+            3. 像差的数学表达
+          </h3>
+          <div class="space-y-4">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">⚪</span>
+                球面像差
+              </h4>
+              <div class="bg-white p-3 rounded border border-blue-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[ S = \frac{r^4}{4f^3} \]
+                </div>
+              </div>
+              <p class="text-sm text-gray-700">其中，\( S \) 为球面像差，\( r \) 为光线离光轴的距离，\( f \) 为透镜的焦距。</p>
+            </div>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">🌈</span>
+                色差
+              </h4>
+              <div class="bg-white p-3 rounded border border-green-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[ \Delta f = f_{\text{red}} - f_{\text{blue}} \]
+                </div>
+              </div>
+              <p class="text-sm text-gray-700">其中，\( \Delta f \) 为色差，\( f_{\text{red}} \) 和 \( f_{\text{blue}} \) 分别是红光和蓝光的焦距。</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">☄️</span>
+                彗差
+              </h4>
+              <div class="bg-white p-3 rounded border border-pink-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[ C = \frac{y^3}{4R^2} \]
+                </div>
+              </div>
+              <p class="text-sm text-gray-700">其中，\( C \) 为彗差，\( y \) 为偏离光轴的距离，\( R \) 为透镜的曲率半径。</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🛠️</span>
+            </div>
+            4. 像差的修正方法
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">🔧</span>
+                使用非球面透镜
+              </h4>
+              <p class="text-sm text-gray-700">非球面透镜可以有效地修正球面像差，特别是在高精度光学系统中广泛应用。</p>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🔗</span>
+                使用复合透镜
+              </h4>
+              <p class="text-sm text-gray-700">通过组合不同类型的透镜，可以通过互相补偿来减少像差，如色差、球面像差等。</p>
+            </div>
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">💻</span>
+                应用计算机算法
+              </h4>
+              <p class="text-sm text-gray-700">在数字图像处理中，可以通过后期修正算法来纠正由像差引起的图像模糊和失真。</p>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg border border-yellow-200">
+              <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
+                <span class="mr-2">🛠️</span>
+                光学设计优化
+              </h4>
+              <p class="text-sm text-gray-700">通过精确的光学设计，选择合适的透镜材料和形状，优化光学系统的性能，减少像差的产生。</p>
+            </div>
+          </div>
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              光学系统的像差是影响成像质量的重要因素，了解不同类型的像差及其形成机制对光学系统的设计和优化至关重要。通过合理的设计和修正方法，可以有效减少像差，获得更高质量的图像。随着光学技术的不断进步，许多高精度光学系统已经能够显著降低像差，满足科学研究、工业检测、医学成像等领域的需求。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c13.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      <button onclick="window.location.href='c15.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

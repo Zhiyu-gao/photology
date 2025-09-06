@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-4 sm:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">物理知识点</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-teal-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-3 sm:p-4 sm:p-3 sm:p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+<!-- 页面标题 -->
+<h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">物理知识点 </h4>
+<!-- 内容卡片 -->
+<!-- 页面标题 -->
+<h4 >物理知识点 </h4>
+<!-- 内容卡片 -->
+<h4 >物理知识点 </h4>
+<h4 >3.4.1 光学评价函数</h4>
+<p class="text-base sm:text-lg">光学评价函数（Optical Merit Function）用于衡量光学系统的性能，通常用于光学设计、优化和分析。不同的光学系统可能有不同的评价标准，常见的光学评价函数包括：</p>
+<ol>
+<li><b>波前误差（Wavefront Error）：</b> 衡量光学系统成像质量的重要指标，描述理想波前与实际波前的偏差。<br>典型单位：均方根（RMS）误差或峰谷（PV）误差。</li>
+<li><b>点扩散函数（Point Spread Function, PSF）：</b> 表示光学系统对点光源的响应，越集中越好。<br>PSF 可用于分析系统的成像锐度。</li>
+<li><b>调制传递函数（Modulation Transfer Function, MTF）：</b> 反映系统的空间频率响应能力，衡量对比度随空间频率的变化。<br>MTF 越高，表示系统的分辨能力越强。</li>
+<li><b>斯特列尔比（Strehl Ratio）：</b> 表示实际光学系统的 PSF 峰值强度与理想系统的比值。<br>越接近 1，说明系统像差越小，质量越好。</li>
+<li><b>RMS 半径（RMS Spot Radius）：</b> 计算点像的均方根（RMS）半径，反映系统的聚焦性能。</li>
+<li><b>光线追迹误差（Ray Aberration）：</b> 计算像面上光线偏离理想像点的位置，可用于优化光学系统。</li>
+<li><b>均匀性（Illumination Uniformity）：</b> 主要用于照明光学系统，衡量照明光强的均匀程度。</li>
+<li><b>像散与畸变（Astigmatism & Distortion）：</b><br>像散：不同子午面与弧矢面聚焦到不同位置的现象。<br>畸变：像点位置相对于理想像位置的偏差，例如桶形和枕形畸变。</li>
+</ol>
+<!-- 导航按钮 -->
+<button onclick="window.location.href='a.html'" >
+<span >←</span>
+返回上一页
+</button>
+<button onclick="window.location.href='photology.html'" >
+<span >🏠</span>
+返回主页
+</button>
+<button onclick="window.location.href='a2.html'" >
+下一页
+<span >→</span>
+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:p-4">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center" text-sm sm:text-base>
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

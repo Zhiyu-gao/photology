@@ -1,0 +1,281 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.5.5 相位复原问题及Gerchberg-Saxton算法</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔄</span>
+            </div>
+            相位复原问题及Gerchberg-Saxton算法
+          </h3>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              相位复原是光学信号处理中一个重要的问题，尤其在衍射成像、全息成像和光学相干层析等领域中，常常需要恢复光场的相位信息。在实际的实验中，我们通常只能测量光场的强度，而无法直接测量其相位信息。相位复原的目标就是从已知的强度信息中恢复出光波的相位分布。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">❓</span>
+            </div>
+            1. 相位复原问题
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            在光学实验中，我们往往通过探测器测量光波的强度（光场的幅度的平方）而非其相位信息。给定光场的幅度 \( |U(r)| \) 和其对应的相位 \( \varphi(r) \)，光场可以表示为：
+          </p>
+          
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ U(r) = |U(r)| e^{i \varphi(r)} \]
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              由于通常只能获取到光场的强度，即 \( |U(r)|^2 \)，我们失去了相位信息。相位复原问题就是在已知光场强度 \( |U(r)|^2 \) 的情况下，如何恢复出完整的光场，包括其相位分布。恢复相位的过程通常是一个迭代的优化问题，涉及到对强度和相位约束条件的交替更新。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🧮</span>
+            </div>
+            2. Gerchberg-Saxton算法
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            Gerchberg-Saxton算法（简称GS算法）是一种基于迭代的相位恢复算法，广泛应用于衍射图像的相位重建。该算法通过交替更新光场的幅度和相位，逐步逼近真实的光场。
+          </p>
+          
+          <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-5 h-5 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs">💡</span>
+            </div>
+            2.1 算法原理
+          </h4>
+          
+          <p class="text-base sm:text-lg">
+            Gerchberg-Saxton算法的核心思想是：在空间域和傅里叶域之间交替进行复振幅的更新。其基本步骤如下：
+          </p>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h5 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">1️⃣</span>
+                步骤 1：初始化
+              </h5>
+              <p class="text-sm text-gray-700">
+                假设一个初始的相位分布，通常可以选择随机相位或初步估计的相位。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h5 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">2️⃣</span>
+                步骤 2：傅里叶变换
+              </h5>
+              <p class="text-sm text-gray-700">
+                将初始的光场（幅度和相位）进行傅里叶变换，得到频域中的复振幅。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h5 class="font-semibold text-purple-800 mb-2 flex items-center">
+                <span class="mr-2">3️⃣</span>
+                步骤 3：应用强度约束
+              </h5>
+              <p class="text-sm text-gray-700">
+                在傅里叶域中，将复振幅的幅度约束为测得的强度，即保持幅度不变，更新相位。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h5 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">4️⃣</span>
+                步骤 4：反向傅里叶变换
+              </h5>
+              <p class="text-sm text-gray-700">
+                对更新后的频域光场进行反向傅里叶变换，回到空间域。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg border border-indigo-200">
+              <h5 class="font-semibold text-indigo-800 mb-2 flex items-center">
+                <span class="mr-2">5️⃣</span>
+                步骤 5：应用空间域约束
+              </h5>
+              <p class="text-sm text-gray-700">
+                在空间域中，将复振幅的幅度约束为测得的强度（即在空间域中保持光强不变），更新相位。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h5 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">6️⃣</span>
+                步骤 6：迭代更新
+              </h5>
+              <p class="text-sm text-gray-700">
+                重复步骤 2 到步骤 5，直到达到收敛条件，即光场的相位变化足够小。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              具体地，Gerchberg-Saxton算法的核心是通过交替更新傅里叶域和空间域中的幅度和相位，逼近目标相位的分布。最终，经过若干次迭代，算法会收敛到一个符合已知强度约束和相位条件的解。
+            </p>
+          </div>
+          
+          <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-5 h-5 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs">📐</span>
+            </div>
+            2.2 数学公式表示
+          </h4>
+          
+          <p class="text-base sm:text-lg">
+            假设在空间域中，已知光场的强度 \( |U_0(r)|^2 \)，即光场的幅度信息，而在频域中，已知光场的强度 \( |F_0(k)|^2 \)。Gerchberg-Saxton算法通过以下过程进行迭代：
+          </p>
+          
+          <div class="space-y-4">
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <p class="text-sm text-gray-700">
+                <strong>1.</strong> 初始光场 \( U_0(r) = |U_0(r)| e^{i \varphi_0(r)} \)，其中 \( \varphi_0(r) \) 为初始相位，可以随机设定。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <p class="text-sm text-gray-700 mb-3">
+                <strong>2.</strong> 将初始光场进行傅里叶变换，得到频域光场：
+              </p>
+              <div class="bg-white p-3 rounded border border-blue-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[ F_1(k) = \mathcal{F}\{U_0(r)\} \]
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <p class="text-sm text-gray-700 mb-3">
+                <strong>3.</strong> 在频域中，保持光强约束，将光场幅度调整为 \( |F_0(k)| \)（即已知的频域强度数据），更新频域光场的相位：
+              </p>
+              <div class="bg-white p-3 rounded border border-purple-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[ F_1(k) = |F_0(k)| e^{i \arg F_1(k)} \]
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <p class="text-sm text-gray-700 mb-3">
+                <strong>4.</strong> 进行反向傅里叶变换，得到空间域中的光场：
+              </p>
+              <div class="bg-white p-3 rounded border border-pink-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[ U_1(r) = \mathcal{F}^{-1}\{F_1(k)\} \]
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-lg border border-indigo-200">
+              <p class="text-sm text-gray-700 mb-3">
+                <strong>5.</strong> 在空间域中，保持光强约束，将光场幅度调整为 \( |U_0(r)| \)（即已知的空间域强度数据），更新空间域光场的相位：
+              </p>
+              <div class="bg-white p-3 rounded border border-indigo-200 text-center">
+                <div class="text-sm font-mono text-gray-800">
+                  \[ U_1(r) = |U_0(r)| e^{i \arg U_1(r)} \]
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <p class="text-sm text-gray-700">
+                <strong>6.</strong> 重复步骤 2 到步骤 5，直到相位变化小于设定的阈值，或者达到最大迭代次数。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌐</span>
+            </div>
+            3. Gerchberg-Saxton算法的应用
+          </h3>
+          
+<p class="text-base sm:text-lg">Gerchberg-Saxton算法被广泛应用于以下领域：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-2 flex items-center">
+                <span class="mr-2">📷</span>
+                全息成像
+              </h4>
+              <p class="text-sm text-gray-700">
+                在全息成像中，通常只测量光的强度而不直接测量相位。通过Gerchberg-Saxton算法可以从强度信息恢复光场的相位，重建出原始物体的三维结构。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-2 flex items-center">
+                <span class="mr-2">🔍</span>
+                光学干涉
+              </h4>
+              <p class="text-sm text-gray-700">
+                在光学干涉实验中，相位信息的获取对干涉图样的解释至关重要。Gerchberg-Saxton算法可以用来恢复干涉图样中的相位分布。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-2 flex items-center">
+                <span class="mr-2">🌊</span>
+                波前重建
+              </h4>
+              <p class="text-sm text-gray-700">
+                Gerchberg-Saxton算法也常用于波前重建，尤其在波前传感器和激光干涉测量等技术中。
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              相位复原问题是光学和成像领域中的一个核心问题，Gerchberg-Saxton算法提供了一种有效的解决方案。通过交替更新傅里叶域和空间域中的相位信息，Gerchberg-Saxton算法能够从光强数据中恢复出光波的完整相位分布。这种算法在全息成像、光学干涉、波前重建等领域中都有广泛的应用。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c10.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c12.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

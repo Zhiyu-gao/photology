@@ -1,0 +1,244 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">4.3.4 偏振成像</h1>
+      <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-6">
+      <div class="prose prose-lg max-w-none">
+        <div class="text-gray-700 leading-relaxed space-y-4 sm:space-y-6">
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📷</span>
+            </div>
+            偏振成像
+          </h3>
+          
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border border-purple-200">
+            <p class="text-base sm:text-lg">
+              偏振成像是一种利用光的偏振特性进行图像获取和分析的技术。通过检测物体表面反射或透射光的偏振状态，可以获得比传统成像更丰富的信息。偏振成像在物体表面特性分析、材料检测、环境监测等领域有广泛应用。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🔍</span>
+            </div>
+            1. 偏振光的反射与折射
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            物体表面或界面上的反射光和折射光通常具有不同的偏振特性。当光与物体表面相互作用时，部分光会被反射，部分光会穿透物体表面并折射出来。反射光的偏振程度与入射角度、物体表面特性等因素密切相关。
+          </p>
+          
+          <p class="text-base sm:text-lg">根据菲涅尔公式，反射光的偏振状态与入射角度 \( \theta \) 之间的关系如下：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 p-4 sm:p-6 rounded-lg text-center">
+              <div class="text-lg sm:text-xl font-mono text-gray-800">
+                \[
+                r_p = \frac{\cos(\theta_i) - \sqrt{\varepsilon \cos^2(\theta_i) - \varepsilon + 1}}{\cos(\theta_i) + \sqrt{\varepsilon \cos^2(\theta_i) - \varepsilon + 1}}
+                \]
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 p-4 sm:p-6 rounded-lg text-center">
+              <div class="text-lg sm:text-xl font-mono text-gray-800">
+                \[
+                r_s = \frac{\sin(\theta_i) - \sqrt{\varepsilon \cos^2(\theta_i) - \varepsilon + 1}}{\sin(\theta_i) + \sqrt{\varepsilon \cos^2(\theta_i) - \varepsilon + 1}}
+                \]
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              其中，\( r_p \) 和 \( r_s \) 分别是平行和垂直偏振光的反射系数，\( \varepsilon \) 是介质的折射率，\( \theta_i \) 是入射角。
+            </p>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">⚙️</span>
+            </div>
+            2. 偏振成像技术
+          </h3>
+          
+          <p class="text-base sm:text-lg">偏振成像技术主要通过以下步骤实现：</p>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+              <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                <span class="mr-2">💡</span>
+                光源和探测器的偏振调制
+              </h4>
+              <p class="text-sm text-gray-700">
+                通过使用偏振光源和偏振探测器，控制入射光和探测光的偏振状态。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+              <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                <span class="mr-2">📸</span>
+                采集偏振图像
+              </h4>
+              <p class="text-sm text-gray-700">
+                使用偏振成像相机，采集不同偏振方向下的图像。这些图像可以提供不同角度的偏振信息，帮助提取物体的表面特征。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+              <h4 class="font-semibold text-purple-800 mb-2 flex items-center">
+                <span class="mr-2">🖥️</span>
+                图像处理与分析
+              </h4>
+              <p class="text-sm text-gray-700">
+                通过对采集到的偏振图像进行处理，提取物体的偏振信息，如反射率、光泽度、表面纹理等。这些信息有助于分析物体的物理特性。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">🌐</span>
+            </div>
+            3. 偏振成像的主要应用
+          </h3>
+          
+          <p class="text-base sm:text-lg">偏振成像广泛应用于多个领域，以下是一些主要应用：</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-4 rounded-lg border border-cyan-200">
+              <h4 class="font-semibold text-cyan-800 mb-3 flex items-center">
+                <span class="mr-2">3.1</span>
+                材料表面分析
+              </h4>
+              <p class="text-sm text-gray-700">
+                偏振成像能够有效地揭示物体表面特性。例如，表面光泽、粗糙度、损伤等都可以通过分析反射光的偏振状态来获得。这对于工业生产中的表面质量检测非常重要。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-lg border border-emerald-200">
+              <h4 class="font-semibold text-emerald-800 mb-3 flex items-center">
+                <span class="mr-2">3.2</span>
+                环境监测与成像
+              </h4>
+              <p class="text-sm text-gray-700">
+                偏振成像可以用于监测水面、气体污染、海洋表面等环境特征。通过偏振光的变化，可以识别水体中的污染物、估计空气中的颗粒物浓度等。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-lg border border-pink-200">
+              <h4 class="font-semibold text-pink-800 mb-3 flex items-center">
+                <span class="mr-2">3.3</span>
+                生物医学成像
+              </h4>
+              <p class="text-sm text-gray-700">
+                在生物医学领域，偏振成像可以用于活体组织的成像。例如，分析皮肤、眼睛等组织的偏振光反射，可以帮助医生诊断某些疾病，如皮肤癌、视网膜病变等。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-lime-50 to-lime-100 p-4 rounded-lg border border-lime-200">
+              <h4 class="font-semibold text-lime-800 mb-3 flex items-center">
+                <span class="mr-2">3.4</span>
+                安全检测与监控
+              </h4>
+              <p class="text-sm text-gray-700">
+                偏振成像技术也在安全检测中得到了应用。例如，在安检中，偏振成像可以用来检测包裹内隐藏物品的材料特性，识别金属或非金属物体。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">⚠️</span>
+            </div>
+            4. 偏振成像的挑战
+          </h3>
+          
+          <p class="text-base sm:text-lg">尽管偏振成像具有广泛的应用，但在实际操作中，仍面临一些挑战：</p>
+          
+          <div class="space-y-3">
+            <div class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg border border-red-200">
+              <h4 class="font-semibold text-red-800 mb-2 flex items-center">
+                <span class="mr-2">🌪️</span>
+                环境因素的影响
+              </h4>
+              <p class="text-sm text-gray-700">
+                大气散射、光源波动等环境因素可能会影响偏振成像的准确性。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-lg border border-orange-200">
+              <h4 class="font-semibold text-orange-800 mb-2 flex items-center">
+                <span class="mr-2">💻</span>
+                高计算量
+              </h4>
+              <p class="text-sm text-gray-700">
+                偏振成像的数据处理需要较大的计算资源，特别是在图像重建和分析过程中。
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-lg border border-yellow-200">
+              <h4 class="font-semibold text-yellow-800 mb-2 flex items-center">
+                <span class="mr-2">💰</span>
+                硬件要求高
+              </h4>
+              <p class="text-sm text-gray-700">
+                高质量的偏振成像系统需要使用特定的光学元件，如偏振片和光学滤波器，这使得设备成本较高。
+              </p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <div class="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+              <span class="text-white text-xs sm:text-sm">📝</span>
+            </div>
+            5. 偏振成像示例
+          </h3>
+          
+          <p class="text-base sm:text-lg">
+            假设我们使用偏振相机拍摄某物体表面，测得该表面的反射光强度与偏振片角度的关系为：
+          </p>
+          
+          <div class="bg-gradient-to-r from-indigo-50 to-purple-50 border-2 border-indigo-200 p-4 sm:p-6 rounded-lg text-center">
+            <div class="text-lg sm:text-xl font-mono text-gray-800">
+              \[ I(\theta) = I_0 \cos^2 \theta \]
+            </div>
+          </div>
+          
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg">
+            <p class="text-gray-700">
+              通过对不同角度下的图像进行采集与分析，可以得到物体表面在不同偏振角度下的反射特性。这些数据可以用来判断表面的光泽度、粗糙度等信息，从而实现表面质量的评估。
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <button onclick="window.location.href='c6.html'" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">←</span>
+        返回上一页
+      </button>
+      
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        <span class="mr-2">🏠</span>
+        返回主页
+      </button>
+      
+      <button onclick="window.location.href='c8.html'" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center text-sm sm:text-base">
+        下一页
+        <span class="ml-2">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

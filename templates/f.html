@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+{% block body %}
+<div class="min-h-screen bg-gradient-to-br from-emerald-50 to-lime-100 py-4">
+  <div class="w-full px-2 sm:px-4 lg:px-6">
+    <!-- 页面标题 -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">光学应用</h1>
+      <p class="text-base sm:text-lg text-gray-600">探索光学在现代科技中的广泛应用</p>
+      <div class="w-24 h-1 bg-gradient-to-r from-emerald-500 to-lime-600 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <!-- 6.1 工业光学 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-lime-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">6.1</span>
+        </div>
+        工业光学
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="f1.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.1.1 激光加工</h3>
+          <p class="text-sm text-gray-600 mt-2">了解激光在工业中的应用</p>
+        </a>
+        <a href="f2.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.1.2 光学检测</h3>
+          <p class="text-sm text-gray-600 mt-2">探索光学检测技术</p>
+        </a>
+        <a href="f3.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.1.3 光学测量</h3>
+          <p class="text-sm text-gray-600 mt-2">研究光学测量方法</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 6.2 医疗光学 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-lime-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">6.2</span>
+        </div>
+        医疗光学
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="f4.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.2.1 医学成像</h3>
+          <p class="text-sm text-gray-600 mt-2">掌握医学光学成像技术</p>
+        </a>
+        <a href="f5.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.2.2 激光治疗</h3>
+          <p class="text-sm text-gray-600 mt-2">学习激光医疗应用</p>
+        </a>
+        <a href="f6.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.2.3 光学诊断</h3>
+          <p class="text-sm text-gray-600 mt-2">研究光学诊断方法</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 6.3 通信光学 -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-lime-600 rounded-lg flex items-center justify-center mr-3">
+          <span class="text-white text-sm">6.3</span>
+        </div>
+        通信光学
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="f7.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.3.1 光纤通信</h3>
+          <p class="text-sm text-gray-600 mt-2">了解光纤通信系统</p>
+        </a>
+        <a href="f8.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.3.2 自由空间通信</h3>
+          <p class="text-sm text-gray-600 mt-2">探索无线光通信</p>
+        </a>
+        <a href="f9.html" class="bg-gradient-to-r from-emerald-50 to-lime-50 p-4 rounded-lg hover:shadow-md transition-all duration-300">
+          <h3 class="font-semibold text-gray-800">6.3.3 量子通信</h3>
+          <p class="text-sm text-gray-600 mt-2">研究量子光学通信</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- 返回按钮 -->
+    <div class="text-center">
+      <button onclick="window.location.href='photology.html'" class="bg-gradient-to-r from-emerald-600 to-lime-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-emerald-700 hover:to-lime-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        返回主页
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %} 
